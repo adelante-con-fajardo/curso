@@ -936,6 +936,15 @@ async function cargarProgresoDesdeBD(userId) {
     updateProgress();
   }
 }
+
+// --- NUEVA FUNCIÓN: REGISTRAR CLICS EN SUPABASE ---
+async function registrarVisitaEnBD(userId) {
+  const { error } = await _supabase.from('registro_visitas').insert([{
+    inscripcion_id: userId || null // Manda el ID si ya inició sesión, o null si es alguien nuevo
+  }]);
+
+  if (error) console.error("Error al registrar la visita:", error);
+}
 // Asignar eventos de clic a los botones Meet/YouTube de la lista principal
 document.addEventListener('DOMContentLoaded', async () => {
   
@@ -973,6 +982,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await cargarProgresoDesdeBD(usuarioActualId);
     
   }
+  registrarVisitaEnBD(usuarioActualId);
   const flotanteWa = document.querySelector('.wa-float');
   if (flotanteWa) flotanteWa.style.setProperty('display', 'flex', 'important');
 });
