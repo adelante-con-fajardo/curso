@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curso: Programa de Gobierno – Sergio Fajardo</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -114,7 +115,12 @@ nav{background:var(--color-secondary);position:sticky;top:0;z-index:100;display:
 /* MAIN */
 main{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
 .layout{display:grid;grid-template-columns:1fr 280px;gap:2rem;align-items:flex-start}
-@media(max-width:820px){.layout{grid-template-columns:1fr}.sidebar{order:-1}.nav-links{display:none}}
+@media(max-width:820px){.layout{grid-template-columns:1fr}.sidebar{order:-1}}
+@media (max-width: 820px) {
+  .nav-links {
+    display: flex !important;
+  }
+}
 
 /* SECTION LABEL */
 .section-label{display:flex;align-items:center;gap:12px;margin-bottom:1rem;margin-top:2.5rem}
@@ -233,6 +239,23 @@ main{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
 footer{background:var(--color-secondary);color:rgba(255,255,255,0.5);text-align:center;padding:2rem 1.5rem;font-size:12px;margin-top:4rem}
 footer strong{color:var(--color-orange-3)}
 footer a{color:var(--color-orange-3);text-decoration:none}
+
+/* 🔥 Ajustes obligatorios para celulares: Footer y Botón Flotante */
+@media (max-width: 820px) {
+  .wa-float {
+    display: flex !important;
+    bottom: 90px !important; /* Lo sube para que no lo tape la barra del navegador */
+    right: 20px !important;
+    z-index: 9999 !important; /* Garantiza que siempre esté al frente */
+  }
+
+  footer {
+    display: block !important;
+    padding-bottom: 100px !important; /* Da espacio extra al final para poder hacer scroll completo */
+    position: relative;
+    z-index: 10;
+  }
+}
 </style>
 </head>
 <body>
@@ -321,13 +344,24 @@ nav {
 <!-- NAV -->
 <nav>
   <a class="nav-brand" href="#">
-    <div class="nav-logo">SF</div>
-    <div class="nav-title">Curso<br><span>Sergio Fajardo</span></div>
+    <div class="nav-logo">
+      <img src="logo.png" alt="Logo Sergio Fajardo">
+    </div>
+    <div class="nav-title">Curso Programa de Gobierno<br><span>Sergio Fajardo</span></div>
   </a>
   <ul class="nav-links">
-    <li><a href="#" class="nav-cta" onclick="openReg(event)">Inscribirme</a></li>
+    <li id="nav-auth-item"><a href="#" class="nav-cta" onclick="openReg(event)">Inscribirme</a></li>
   </ul>
 </nav>
+<style>
+  /* Ajuste para que la imagen del logo encaje perfecto */
+.nav-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita que la imagen se estire o deforme */
+  border-radius: 50%; /* Mantiene el diseño circular */
+}
+</style>
 
 <!-- HERO -->
 <section class="hero">
@@ -337,7 +371,7 @@ nav {
         <h1>Colombia <em>Adelante</em>:<br></h1>
     </div>
     <p class="hero-sub">
-        Explora las propuestas de <strong>Compromiso Ciudadano</strong>: seguridad, salud, educación y dignidad social. Un programa serio y seguro basado en la transformación educativa y urbana que ya demostramos en Antioquia y Medellín.
+        Explora las propuestas de <strong>Sergio Fajardo</strong>: seguridad, salud, educación y dignidad social. Un programa serio y seguro basado en la transformación educativa y urbana que ya demostró en Antioquia y Medellín. Reconocido internacionalmente por la transformación urbana.
     </p>
 
     <div class="hero-stats">
@@ -413,25 +447,25 @@ nav {
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">Lección 1</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Introducción y Contexto','Módulo Introductorio','La construcción de la Colombia que necesitamos. Análisis de los desafíos concretos: inseguridad, colapso del sistema de salud, corrupción, crisis energética e inestabilidad fiscal.',['Comprender el diagnóstico del país que presenta Fajardo','Identificar los 5 desafíos estructurales de Colombia en 2026','Entender la visión de no-extremos y gobierno de decencia'],'15 min','Lunes 14 Abr 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Introducción y Contexto</div>
+            <div class="lesson-title" onclick="openLesson(event,'Introducción y Contexto','Módulo Introductorio','La construcción de la Colombia que necesitamos. Análisis de los desafíos concretos: inseguridad, colapso del sistema de salud, corrupción, crisis energética e inestabilidad fiscal.',['Comprender el diagnóstico del país que presenta Fajardo','Identificar los 5 desafíos estructurales de Colombia en 2026','Entender la visión de no-extremos y gobierno de decencia'],'10 min','Mié 8 Abr 2026 · 8:00 - 9:00 PM','https://calendar.app.google/g3aYEjzBDCWWhgsL7',null,'https://calendar.app.google/g3aYEjzBDCWWhgsL7')">Introducción y Contexto</div>
             <div class="lesson-sub">La Colombia que necesitamos · Diagnóstico nacional</div>
-            <div class="lesson-date">📅 Lun 14 Abr 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mié 8 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <a class="btn-yt" href="https://youtube.com" target="_blank">▶ YouTube</a>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-meet" href="https://meet.google.com/ojb-zpet-jyq" target="_blank">📹 Meet</a>
+              <a class="btn-yt soon" href="" target="_blank">▶ YouTube</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">Lección 2</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Líneas de Acción','Módulo Introductorio','Estructura del programa en tres grandes ejes: Crisis – Recuperación Segura; Esperanza – Colombia Adelante; y Dignidad – Compromiso Social en Serio.',['Conocer la arquitectura del programa de gobierno','Entender la lógica Crisis → Esperanza → Dignidad','Identificar las prioridades de gestión del candidato'],'12 min','Miércoles 16 Abr 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Líneas de Acción</div>
+            <div class="lesson-title" onclick="openLesson(event,'Líneas de Acción','Módulo Introductorio','Estructura del programa en tres grandes ejes: Crisis – Recuperación Segura; Esperanza – Colombia Adelante; y Dignidad – Compromiso Social en Serio.',['Conocer la arquitectura del programa de gobierno','Entender la lógica Crisis → Esperanza → Dignidad','Identificar las prioridades de gestión del candidato'],'10 min','Mié 8 Abr 2026 · 8:00 - 9:00 PM','https://calendar.app.google/ovzkNztfYw18FvdB7','','')">Líneas de Acción</div>
             <div class="lesson-sub">Crisis · Esperanza · Dignidad</div>
-            <div class="lesson-date">📅 Mié 16 Abr 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mié 8 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="https://meet.google.com/ojb-zpet-jyq" target="_blank">📹 Meet</a>
               <span class="btn-yt soon" title="Aún no disponible">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="https://wa.me/593980407829" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
@@ -455,85 +489,85 @@ nav {
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">1.1</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Seguridad: Plan Guardián','Módulo 1 · Crisis y Recuperación Segura','Recuperar la autoridad democrática con firmeza y dentro de la ley. Fortalecimiento de la Fuerza Pública, inteligencia, coordinación institucional y control territorial.',['Entender el diagnóstico de seguridad en Colombia','Conocer el Plan Guardián y sus componentes','Analizar la estrategia de presencia estatal en territorios'],'20 min','Lunes 21 Abr 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij','https://youtube.com','https://wa.me/573001234567')">Seguridad: Plan Guardián</div>
+            <div class="lesson-title" onclick="openLesson(event,'Seguridad: Plan Guardián','Módulo 1 · Crisis y Recuperación Segura','Recuperar la autoridad democrática con firmeza y dentro de la ley. Fortalecimiento de la Fuerza Pública, inteligencia, coordinación institucional y control territorial.',['Entender el diagnóstico de seguridad en Colombia','Conocer el Plan Guardián y sus componentes','Analizar la estrategia de presencia estatal en territorios'],'20 min','Mié 8 Abr 2026 · 8:00 - 9:00 PM','https://calendar.app.google/ovzkNztfYw18FvdB7','','')">Seguridad: Plan Guardián</div>
             <div class="lesson-sub">Control territorial · Fuerza Pública · Crimen organizado</div>
-            <div class="lesson-date">📅 Lun 21 Abr 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mié 8 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <a class="btn-yt" href="https://youtube.com" target="_blank">▶ YouTube</a>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-meet" href="https://meet.google.com/ojb-zpet-jyq" target="_blank">📹 Meet</a>
+              <a class="btn-yt soon" href="" target="_blank">▶ YouTube</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">1.2</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Salud: Nuevo Orden del Sistema','Módulo 1 · Crisis y Recuperación Segura','Reorganizar el sistema de salud para garantizar acceso oportuno, calidad en la atención y sostenibilidad financiera. Pago de deudas, reglas claras y enfoque territorial.',['Comprender el colapso del sistema de salud','Conocer el plan de reorganización y deudas acumuladas','Entender el modelo de gestión del riesgo territorial'],'22 min','Mié 23 Abr 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Salud: Nuevo Orden del Sistema</div>
+            <div class="lesson-title" onclick="openLesson(event,'Salud: Nuevo Orden del Sistema','Módulo 1 · Crisis y Recuperación Segura','Reorganizar el sistema de salud para garantizar acceso oportuno, calidad en la atención y sostenibilidad financiera. Pago de deudas, reglas claras y enfoque territorial.',['Comprender el colapso del sistema de salud','Conocer el plan de reorganización y deudas acumuladas','Entender el modelo de gestión del riesgo territorial'],'20 min','Mié 8 Abr 2026 · 8:00 - 9:00 PM','https://calendar.app.google/ovzkNztfYw18FvdB7','','')">Salud: Nuevo Orden del Sistema</div>
             <div class="lesson-sub">Acceso oportuno · Sostenibilidad · Territorios</div>
-            <div class="lesson-date">📅 Mié 23 Abr 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mié 8 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="https://meet.google.com/ojb-zpet-jyq" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">1.3</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Finanzas Públicas y Regla Fiscal','Módulo 1 · Crisis y Recuperación Segura','Manejo responsable de los recursos públicos. Plan de ajuste fiscal, sostenibilidad de la deuda y reglas que protejan la estabilidad económica como base del desarrollo.',['Entender la situación fiscal actual de Colombia','Conocer la propuesta de regla fiscal responsable','Analizar el plan de ajuste y sus implicaciones'],'18 min','Lun 28 Abr 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Finanzas Públicas y Regla Fiscal</div>
+            <div class="lesson-title" onclick="openLesson(event,'Finanzas Públicas y Regla Fiscal','Módulo 1 · Crisis y Recuperación Segura','Manejo responsable de los recursos públicos. Plan de ajuste fiscal, sostenibilidad de la deuda y reglas que protejan la estabilidad económica como base del desarrollo.',['Entender la situación fiscal actual de Colombia','Conocer la propuesta de regla fiscal responsable','Analizar el plan de ajuste y sus implicaciones'],'18 min','Lun 28 Abr 2026 · 6:00 PM','',null,'')">Finanzas Públicas y Regla Fiscal</div>
             <div class="lesson-sub">Manejo responsable · Ajuste fiscal · Estabilidad</div>
-            <div class="lesson-date">📅 Lun 28 Abr 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Jue 9 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="https://meet.google.com/zex-rpcc-wac" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">1.4</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Transición Energética Responsable','Módulo 1 · Crisis y Recuperación Segura','Transición energética gradual y sostenible: seguridad en el suministro, incorporación de renovables con reglas claras. Tarifas justas y cobertura regional.',['Diagnosticar la crisis del sistema energético colombiano','Comprender la hoja de ruta de transición energética','Evaluar el balance entre renovables y seguridad de suministro'],'20 min','Mié 30 Abr 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Transición Energética Responsable</div>
+            <div class="lesson-title" onclick="openLesson(event,'Transición Energética Responsable','Módulo 1 · Crisis y Recuperación Segura','Transición energética gradual y sostenible: seguridad en el suministro, incorporación de renovables con reglas claras. Tarifas justas y cobertura regional.',['Diagnosticar la crisis del sistema energético colombiano','Comprender la hoja de ruta de transición energética','Evaluar el balance entre renovables y seguridad de suministro'],'20 min','Mié 30 Abr 2026 · 6:00 PM','',null,'')">Transición Energética Responsable</div>
             <div class="lesson-sub">Renovables · Soberanía energética · Sin apagones</div>
-            <div class="lesson-date">📅 Mié 30 Abr 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Jue 9 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="https://meet.google.com/zex-rpcc-wac" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">1.5</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Lucha Anticorrupción','Módulo 1 · Crisis y Recuperación Segura','Transparencia total, cero impunidad. Modelo preventivo: anticipación, detección y reacción coordinada. Protección de lo público como base moral del gobierno.',['Conocer el modelo anticorrupción preventivo','Entender las herramientas de control y transparencia','Identificar el papel de la ciudadanía en el control social'],'17 min','Lun 5 May 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Lucha Anticorrupción</div>
+            <div class="lesson-title" onclick="openLesson(event,'Lucha Anticorrupción','Módulo 1 · Crisis y Recuperación Segura','Transparencia total, cero impunidad. Modelo preventivo: anticipación, detección y reacción coordinada. Protección de lo público como base moral del gobierno.',['Conocer el modelo anticorrupción preventivo','Entender las herramientas de control y transparencia','Identificar el papel de la ciudadanía en el control social'],'17 min','Lun 5 May 2026 · 6:00 PM','',null,'')">Lucha Anticorrupción</div>
             <div class="lesson-sub">Transparencia total · Cero impunidad · Control social</div>
-            <div class="lesson-date">📅 Lun 5 May 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Jue 9 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="https://meet.google.com/zex-rpcc-wac" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">1.6</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Justicia y Descongestión Judicial','Módulo 1 · Crisis y Recuperación Segura','Reforma del sistema judicial: modernización tecnológica, cercanía al ciudadano, eliminación de privilegios e impunidad. Justicia rápida, accesible y sin privilegios.',['Analizar los cuellos de botella del sistema judicial','Conocer la propuesta de modernización y tecnología','Comprender el enfoque de justicia cercana al ciudadano'],'18 min','Mié 7 May 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Justicia y Descongestión Judicial</div>
+            <div class="lesson-title" onclick="openLesson(event,'Justicia y Descongestión Judicial','Módulo 1 · Crisis y Recuperación Segura','Reforma del sistema judicial: modernización tecnológica, cercanía al ciudadano, eliminación de privilegios e impunidad. Justicia rápida, accesible y sin privilegios.',['Analizar los cuellos de botella del sistema judicial','Conocer la propuesta de modernización y tecnología','Comprender el enfoque de justicia cercana al ciudadano'],'18 min','Mié 7 May 2026 · 6:00 PM','',null,'')">Justicia y Descongestión Judicial</div>
             <div class="lesson-sub">Reforma judicial · Tecnología · Sin privilegios</div>
-            <div class="lesson-date">📅 Mié 7 May 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Sáb 11 Abr 2026 · 9:00 - 10:00 AM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="https://meet.google.com/zge-qwik-nre" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">1.7</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Política Exterior','Módulo 1 · Crisis y Recuperación Segura','Diplomacia al servicio de los ciudadanos: liderazgo regional, relaciones bilaterales sólidas, diálogos de paz con condiciones claras y defensa de los colombianos en el exterior.',['Entender la visión de política exterior del candidato','Conocer la posición en diálogos de paz y multilateralismo','Analizar el rol de Colombia en la región'],'15 min','Lun 12 May 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Política Exterior</div>
+            <div class="lesson-title" onclick="openLesson(event,'Política Exterior','Módulo 1 · Crisis y Recuperación Segura','Diplomacia al servicio de los ciudadanos: liderazgo regional, relaciones bilaterales sólidas, diálogos de paz con condiciones claras y defensa de los colombianos en el exterior.',['Entender la visión de política exterior del candidato','Conocer la posición en diálogos de paz y multilateralismo','Analizar el rol de Colombia en la región'],'15 min','Lun 12 May 2026 · 6:00 PM','',null,'')">Política Exterior</div>
             <div class="lesson-sub">Diplomacia · Liderazgo regional · Colombianos exterior</div>
-            <div class="lesson-date">📅 Lun 12 May 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Sáb 11 Abr 2026 · 9:00 - 10:00 AM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="https://meet.google.com/zge-qwik-nre" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
@@ -557,97 +591,97 @@ nav {
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">2.1</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Educación: Puerta de la Esperanza','Módulo 2 · Esperanza y Colombia Adelante','Trayectorias educativas completas: desde primera infancia hasta educación superior. Educación conectada con CTI como motor de transformación social.',['Conocer la propuesta de trayectorias educativas completas','Analizar la articulación educación-CTI','Entender el enfoque de niñez y juventud como prioridad'],'25 min','Mié 14 May 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Educación: Puerta de la Esperanza</div>
+            <div class="lesson-title" onclick="openLesson(event,'Educación: Puerta de la Esperanza','Módulo 2 · Esperanza y Colombia Adelante','Trayectorias educativas completas: desde primera infancia hasta educación superior. Educación conectada con CTI como motor de transformación social.',['Conocer la propuesta de trayectorias educativas completas','Analizar la articulación educación-CTI','Entender el enfoque de niñez y juventud como prioridad'],'25 min','Mié 14 May 2026 · 6:00 PM','',null,'')">Educación: Puerta de la Esperanza</div>
             <div class="lesson-sub">Primera infancia · Universidad · Calidad educativa</div>
-            <div class="lesson-date">📅 Mié 14 May 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Sáb 11 Abr 2026 · 9:00 - 10:00 AM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="https://meet.google.com/zge-qwik-nre" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">2.2</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Ciencia, Tecnología e Innovación','Módulo 2 · Esperanza y Colombia Adelante','Simplificar e integrar el ecosistema de CTI en Colombia. Potenciar la investigación como motor de productividad y transformación social, articulado con el sector productivo.',['Entender el diagnóstico del ecosistema CTI colombiano','Conocer la propuesta de simplificación e integración','Analizar el vínculo entre investigación y sector productivo'],'20 min','Lun 19 May 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Ciencia, Tecnología e Innovación</div>
+            <div class="lesson-title" onclick="openLesson(event,'Ciencia, Tecnología e Innovación','Módulo 2 · Esperanza y Colombia Adelante','Simplificar e integrar el ecosistema de CTI en Colombia. Potenciar la investigación como motor de productividad y transformación social, articulado con el sector productivo.',['Entender el diagnóstico del ecosistema CTI colombiano','Conocer la propuesta de simplificación e integración','Analizar el vínculo entre investigación y sector productivo'],'20 min','Lun 19 May 2026 · 6:00 PM','',null,'')">Ciencia, Tecnología e Innovación</div>
             <div class="lesson-sub">Investigación · Productividad · Transformación social</div>
-            <div class="lesson-date">📅 Lun 19 May 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Dom 12 Abr 2026 · 9:00 - 10:00 AM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">2.3</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Emprendimiento y Crecimiento','Módulo 2 · Esperanza y Colombia Adelante','Colombia Crece: apoyo a la creación de empresas, generación de empleo formal y ecosistema amigable para emprendedores. Formalización y financiación accesible.',['Conocer las herramientas de apoyo al emprendimiento','Analizar la propuesta de formalización empresarial','Entender los mecanismos de financiación'],'18 min','Mié 21 May 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Emprendimiento y Crecimiento</div>
+            <div class="lesson-title" onclick="openLesson(event,'Emprendimiento y Crecimiento','Módulo 2 · Esperanza y Colombia Adelante','Colombia Crece: apoyo a la creación de empresas, generación de empleo formal y ecosistema amigable para emprendedores. Formalización y financiación accesible.',['Conocer las herramientas de apoyo al emprendimiento','Analizar la propuesta de formalización empresarial','Entender los mecanismos de financiación'],'18 min','Mié 21 May 2026 · 6:00 PM','',null,'')">Emprendimiento y Crecimiento</div>
             <div class="lesson-sub">Colombia Crece · Empresas · Empleo formal</div>
-            <div class="lesson-date">📅 Mié 21 May 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Dom 12 Abr 2026 · 9:00 - 10:00 AM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">2.4</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Desarrollo Productivo y Exportación','Módulo 2 · Esperanza y Colombia Adelante','Reconversión tecnológica del aparato productivo y vocación exportadora. Diversificación económica más allá de los hidrocarburos, con industrias de alto valor agregado.',['Analizar el modelo de diversificación económica','Conocer la estrategia exportadora de Fajardo','Entender la reconversión productiva con tecnología'],'20 min','Lun 26 May 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Desarrollo Productivo y Exportación</div>
+            <div class="lesson-title" onclick="openLesson(event,'Desarrollo Productivo y Exportación','Módulo 2 · Esperanza y Colombia Adelante','Reconversión tecnológica del aparato productivo y vocación exportadora. Diversificación económica más allá de los hidrocarburos, con industrias de alto valor agregado.',['Analizar el modelo de diversificación económica','Conocer la estrategia exportadora de Fajardo','Entender la reconversión productiva con tecnología'],'20 min','Lun 26 May 2026 · 6:00 PM','',null,'')">Desarrollo Productivo y Exportación</div>
             <div class="lesson-sub">Reconversión · Exportaciones · Valor agregado</div>
-            <div class="lesson-date">📅 Lun 26 May 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Dom 12 Abr 2026 · 9:00 - 10:00 AM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">2.5</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Agricultura y Desarrollo Rural','Módulo 2 · Esperanza y Colombia Adelante','Sembrar progreso, cosechar riqueza. Apoyo al campo colombiano: reforma agraria productiva, tecnología para pequeños productores y mercados para la agricultura familiar.',['Conocer la propuesta de desarrollo rural productivo','Analizar el papel de la tecnología en el campo','Entender la articulación campo-ciudad'],'22 min','Mié 28 May 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Agricultura y Desarrollo Rural</div>
+            <div class="lesson-title" onclick="openLesson(event,'Agricultura y Desarrollo Rural','Módulo 2 · Esperanza y Colombia Adelante','Sembrar progreso, cosechar riqueza. Apoyo al campo colombiano: reforma agraria productiva, tecnología para pequeños productores y mercados para la agricultura familiar.',['Conocer la propuesta de desarrollo rural productivo','Analizar el papel de la tecnología en el campo','Entender la articulación campo-ciudad'],'22 min','Mié 28 May 2026 · 6:00 PM','',null,'')">Agricultura y Desarrollo Rural</div>
             <div class="lesson-sub">Campo · Pequeños productores · Soberanía alimentaria</div>
-            <div class="lesson-date">📅 Mié 28 May 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mar 14 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">2.6</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Medio Ambiente y Bioeconomía','Módulo 2 · Esperanza y Colombia Adelante','Protección de la biodiversidad como activo estratégico. Soluciones climáticas concretas y bioeconomía como modelo de desarrollo compatible con la riqueza natural de Colombia.',['Entender la visión de Colombia como potencia ambiental','Conocer la propuesta de bioeconomía','Analizar los compromisos climáticos internacionales'],'20 min','Lun 2 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Medio Ambiente y Bioeconomía</div>
+            <div class="lesson-title" onclick="openLesson(event,'Medio Ambiente y Bioeconomía','Módulo 2 · Esperanza y Colombia Adelante','Protección de la biodiversidad como activo estratégico. Soluciones climáticas concretas y bioeconomía como modelo de desarrollo compatible con la riqueza natural de Colombia.',['Entender la visión de Colombia como potencia ambiental','Conocer la propuesta de bioeconomía','Analizar los compromisos climáticos internacionales'],'20 min','Lun 2 Jun 2026 · 6:00 PM','',null,'')">Medio Ambiente y Bioeconomía</div>
             <div class="lesson-sub">Biodiversidad · Clima · Desarrollo sostenible</div>
-            <div class="lesson-date">📅 Lun 2 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mar 14 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">2.7</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Infraestructura y Movilidad','Módulo 2 · Esperanza y Colombia Adelante','Conectar regiones olvidadas: puertos, vías, aeropuertos y sistemas de transporte urbano. Rigor y transparencia en la ejecución de proyectos estratégicos.',['Conocer los proyectos prioritarios de infraestructura','Analizar la estrategia de conectividad regional','Entender el modelo de transparencia en la contratación'],'18 min','Mié 4 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Infraestructura y Movilidad</div>
+            <div class="lesson-title" onclick="openLesson(event,'Infraestructura y Movilidad','Módulo 2 · Esperanza y Colombia Adelante','Conectar regiones olvidadas: puertos, vías, aeropuertos y sistemas de transporte urbano. Rigor y transparencia en la ejecución de proyectos estratégicos.',['Conocer los proyectos prioritarios de infraestructura','Analizar la estrategia de conectividad regional','Entender el modelo de transparencia en la contratación'],'18 min','Mié 4 Jun 2026 · 6:00 PM','',null,'')">Infraestructura y Movilidad</div>
             <div class="lesson-sub">Vías · Puertos · Conectividad regional</div>
-            <div class="lesson-date">📅 Mié 4 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mar 14 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">2.8</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Turismo Sostenible','Módulo 2 · Esperanza y Colombia Adelante','Valorizar e integrar los destinos turísticos nacionales. Turismo como motor económico en regiones históricamente marginadas, con enfoque en sostenibilidad y comunidades locales.',['Conocer la estrategia de turismo sostenible','Analizar el potencial turístico de Colombia','Entender la participación de comunidades locales'],'15 min','Lun 9 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Turismo Sostenible</div>
+            <div class="lesson-title" onclick="openLesson(event,'Turismo Sostenible','Módulo 2 · Esperanza y Colombia Adelante','Valorizar e integrar los destinos turísticos nacionales. Turismo como motor económico en regiones históricamente marginadas, con enfoque en sostenibilidad y comunidades locales.',['Conocer la estrategia de turismo sostenible','Analizar el potencial turístico de Colombia','Entender la participación de comunidades locales'],'15 min','Lun 9 Jun 2026 · 6:00 PM','',null,'')">Turismo Sostenible</div>
             <div class="lesson-sub">Destinos nacionales · Comunidades · Economía regional</div>
-            <div class="lesson-date">📅 Lun 9 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mié 15 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
@@ -671,73 +705,73 @@ nav {
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">3.1</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Inclusión Social y Mínimo Digno','Módulo 3 · Dignidad y Compromiso Social','Sistema de protección social moderno: erradicación del hambre, subsidios focalizados y mínimo vital garantizado. El Estado como escudo para los más vulnerables.',['Conocer el concepto de mínimo digno en el programa','Analizar el sistema de protección social propuesto','Entender los mecanismos de erradicación del hambre'],'22 min','Mié 11 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Inclusión Social y Mínimo Digno</div>
+            <div class="lesson-title" onclick="openLesson(event,'Inclusión Social y Mínimo Digno','Módulo 3 · Dignidad y Compromiso Social','Sistema de protección social moderno: erradicación del hambre, subsidios focalizados y mínimo vital garantizado. El Estado como escudo para los más vulnerables.',['Conocer el concepto de mínimo digno en el programa','Analizar el sistema de protección social propuesto','Entender los mecanismos de erradicación del hambre'],'22 min','Mié 11 Jun 2026 · 6:00 PM','',null,'')">Inclusión Social y Mínimo Digno</div>
             <div class="lesson-sub">Protección social · Hambre cero · Mínimo vital</div>
-            <div class="lesson-date">📅 Mié 11 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mié 15 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">3.2</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Empleo Productivo y Trabajo Digno','Módulo 3 · Dignidad y Compromiso Social','Creación de oportunidades laborales sostenibles: empleo formal, derechos laborales, economía del cuidado y políticas para reducir la informalidad estructural.',['Analizar el diagnóstico del mercado laboral colombiano','Conocer las políticas de formalización del empleo','Entender la propuesta de economía del cuidado'],'20 min','Lun 16 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Empleo Productivo y Trabajo Digno</div>
+            <div class="lesson-title" onclick="openLesson(event,'Empleo Productivo y Trabajo Digno','Módulo 3 · Dignidad y Compromiso Social','Creación de oportunidades laborales sostenibles: empleo formal, derechos laborales, economía del cuidado y políticas para reducir la informalidad estructural.',['Analizar el diagnóstico del mercado laboral colombiano','Conocer las políticas de formalización del empleo','Entender la propuesta de economía del cuidado'],'20 min','Lun 16 Jun 2026 · 6:00 PM','',null,'')">Empleo Productivo y Trabajo Digno</div>
             <div class="lesson-sub">Formalización · Derechos laborales · Economía del cuidado</div>
-            <div class="lesson-date">📅 Lun 16 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Mié 15 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">3.3</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Vivienda y Ciudades','Módulo 3 · Dignidad y Compromiso Social','Volver a soñar con una ciudad habitable: acceso a vivienda digna, desarrollo urbano planificado y ciudades que integran naturaleza, movilidad y convivencia.',['Conocer la propuesta de vivienda del programa','Analizar el modelo de desarrollo urbano sostenible','Entender la articulación vivienda-ciudad-región'],'20 min','Mié 18 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Vivienda y Ciudades</div>
+            <div class="lesson-title" onclick="openLesson(event,'Vivienda y Ciudades','Módulo 3 · Dignidad y Compromiso Social','Volver a soñar con una ciudad habitable: acceso a vivienda digna, desarrollo urbano planificado y ciudades que integran naturaleza, movilidad y convivencia.',['Conocer la propuesta de vivienda del programa','Analizar el modelo de desarrollo urbano sostenible','Entender la articulación vivienda-ciudad-región'],'20 min','Mié 18 Jun 2026 · 6:00 PM','',null,'')">Vivienda y Ciudades</div>
             <div class="lesson-sub">Vivienda digna · Desarrollo urbano · Ciudad habitable</div>
-            <div class="lesson-date">📅 Mié 18 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Jue 16 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">3.4</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Cultura y Convivencia','Módulo 3 · Dignidad y Compromiso Social','De la cultura del enfrentamiento a la cultura de la convivencia. Industrias culturales, saberes tradicionales y el arte como herramienta de cohesión social.',['Conocer la visión cultural del candidato','Analizar el rol de las industrias culturales','Entender la cultura como herramienta de convivencia'],'18 min','Lun 23 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Cultura y Convivencia</div>
+            <div class="lesson-title" onclick="openLesson(event,'Cultura y Convivencia','Módulo 3 · Dignidad y Compromiso Social','De la cultura del enfrentamiento a la cultura de la convivencia. Industrias culturales, saberes tradicionales y el arte como herramienta de cohesión social.',['Conocer la visión cultural del candidato','Analizar el rol de las industrias culturales','Entender la cultura como herramienta de convivencia'],'18 min','Lun 23 Jun 2026 · 6:00 PM','',null,'')">Cultura y Convivencia</div>
             <div class="lesson-sub">Industrias culturales · Saberes · Cohesión social</div>
-            <div class="lesson-date">📅 Lun 23 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Jue 16 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">3.5</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Deporte e Inclusión','Módulo 3 · Dignidad y Compromiso Social','Deporte como instrumento de inclusión y movilidad social: fomento masivo de la actividad física, alto rendimiento, infraestructura deportiva y deporte en territorios.',['Conocer la propuesta de masificación del deporte','Analizar el modelo de alto rendimiento deportivo','Entender el deporte como herramienta de inclusión'],'15 min','Mié 25 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Deporte e Inclusión</div>
+            <div class="lesson-title" onclick="openLesson(event,'Deporte e Inclusión','Módulo 3 · Dignidad y Compromiso Social','Deporte como instrumento de inclusión y movilidad social: fomento masivo de la actividad física, alto rendimiento, infraestructura deportiva y deporte en territorios.',['Conocer la propuesta de masificación del deporte','Analizar el modelo de alto rendimiento deportivo','Entender el deporte como herramienta de inclusión'],'15 min','Mié 25 Jun 2026 · 6:00 PM','',null,'')">Deporte e Inclusión</div>
             <div class="lesson-sub">Actividad física · Alto rendimiento · Territorios</div>
-            <div class="lesson-date">📅 Mié 25 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Jue 16 Abr 2026 · 8:00 - 9:00 PM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
           <div class="lesson-card">
             <div class="lesson-top"><span class="lesson-num">3.6</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Poblaciones y Riqueza Multicultural','Módulo 3 · Dignidad y Compromiso Social','Enfoque diferencial para mujeres, niñez, personas mayores, comunidades étnicas, población LGBTIQ+ y víctimas del conflicto. Colombia es más rica por su diversidad.',['Entender el enfoque diferencial en políticas públicas','Conocer las propuestas para cada grupo poblacional','Analizar la interseccionalidad en el programa de gobierno'],'25 min','Lun 30 Jun 2026 · 6:00 PM','https://meet.google.com/abc-defg-hij',null,'https://wa.me/573001234567')">Poblaciones y Riqueza Multicultural</div>
+            <div class="lesson-title" onclick="openLesson(event,'Poblaciones y Riqueza Multicultural','Módulo 3 · Dignidad y Compromiso Social','Enfoque diferencial para mujeres, niñez, personas mayores, comunidades étnicas, población LGBTIQ+ y víctimas del conflicto. Colombia es más rica por su diversidad.',['Entender el enfoque diferencial en políticas públicas','Conocer las propuestas para cada grupo poblacional','Analizar la interseccionalidad en el programa de gobierno'],'25 min','Lun 30 Jun 2026 · 6:00 PM','',null,'')">Poblaciones y Riqueza Multicultural</div>
             <div class="lesson-sub">Mujeres · Etnias · Víctimas · LGBTIQ+ · Diversidad</div>
-            <div class="lesson-date">📅 Lun 30 Jun 2026 · 6:00 PM</div>
+            <div class="lesson-date">📅 Sáb 18 Abr 2026 · 9:00 - 10:00 AM</div>
             <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/abc-defg-hij" target="_blank">📹 Meet</a>
+              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
               <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/573001234567" target="_blank">📁 Recursos</a>
+              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
             </div>
           </div>
 
@@ -798,22 +832,29 @@ nav {
 </footer>
 
 <!-- FLOATING WHATSAPP -->
-<a class="wa-float" href="https://wa.me/573001234567" target="_blank" title="Contáctanos por WhatsApp">
+<a class="wa-float" href="https://wa.me/593980407829" target="_blank" title="Contáctanos por WhatsApp">
   <span class="wa-float-label">Contáctanos por WhatsApp</span>
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
+// --- 1. CONFIGURACIÓN DE SUPABASE ---
+// Reemplaza estas variables con tus credenciales de Supabase (Project URL y API Key)
+const SUPABASE_URL = 'https://ppvifhshcxthxgoiygtk.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwdmlmaHNoY3h0aHhnb2l5Z3RrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1MjcxNTksImV4cCI6MjA5MTEwMzE1OX0.WEhkYpTOvl2CXl_K8ydc4Z5YbFQHPH2c0T6ik1MOcBU';
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+let usuarioActualId = null; // Guardará el ID en la BD cuando el usuario se inscriba
+
+// --- LÓGICA DE PROGRESO ORIGINAL ---
 const TOTALS=[2,7,8,6];
 let checks=Array.from(document.querySelectorAll('.lesson-check'));
 let done=new Array(checks.length).fill(false);
 
-function toggleCheck(e,el){
+function toggleCheck(e, el){
   e.stopPropagation();
-  const idx=checks.indexOf(el);
-  done[idx]=!done[idx];
-  el.classList.toggle('checked',done[idx]);
-  updateProgress();
+  const idx = checks.indexOf(el);
+  marcarLeccionComoAprobada(idx, !done[idx]); // Reutilizamos la nueva función
 }
 
 function updateProgress(){
@@ -821,15 +862,15 @@ function updateProgress(){
   TOTALS.forEach((total,mi)=>{
     const modDone=done.slice(cursor,cursor+total).filter(Boolean).length;
     const pct=total>0?Math.round(modDone/total*100):0;
-    // module-card inner bar
+    
     const f2=document.querySelectorAll('.prog-fill2')[mi];
     if(f2)f2.style.width=pct+'%';
-    // top progress bar per module
+    
     const gf=document.getElementById('globalFill'+mi);
     const gp=document.getElementById('globalPct'+mi);
     if(gf)gf.style.width=pct+'%';
     if(gp)gp.textContent=pct+'%';
-    // sidebar bars
+    
     const sf=document.getElementById('fill'+mi);
     const sp=document.getElementById('pct'+mi);
     if(sf)sf.style.width=pct+'%';
@@ -842,24 +883,128 @@ function toggleModule(card){
   card.classList.toggle('open');
 }
 
+// --- 2. NUEVA FUNCIÓN: APROBAR LECCIÓN Y ENVIAR A BD ---
+async function marcarLeccionComoAprobada(idx, forzarEstado = true) {
+  // Si el estado ya es igual al que queremos poner, no hacemos nada
+  if (done[idx] === forzarEstado) return; 
+
+  // 1. Cambiamos el estado visualmente en el HTML (pinta el check verde)
+  done[idx] = forzarEstado;
+  checks[idx].classList.toggle('checked', forzarEstado);
+  updateProgress();
+
+  // 2. Sincronizamos con Supabase
+  if (usuarioActualId) {
+    if (forzarEstado) {
+      // Si se completó, insertamos el registro
+      const { error } = await _supabase.from('progreso_lecciones').insert([{
+        inscripcion_id: usuarioActualId,
+        leccion_indice: idx
+      }]);
+      if(error) console.error("Error al guardar check:", error);
+    } else {
+      // Si el usuario desmarcó el círculo, lo borramos de la base de datos
+      const { error } = await _supabase.from('progreso_lecciones')
+        .delete()
+        .match({ inscripcion_id: usuarioActualId, leccion_indice: idx });
+      if(error) console.error("Error al borrar check:", error);
+    }
+  }
+}
+
+// --- NUEVA FUNCIÓN: Traer los checks verdes guardados ---
+async function cargarProgresoDesdeBD(userId) {
+  const { data, error } = await _supabase
+    .from('progreso_lecciones')
+    .select('leccion_indice')
+    .eq('inscripcion_id', userId);
+
+  if (data && data.length > 0) {
+    data.forEach(fila => {
+      const idx = fila.leccion_indice;
+      // Pintamos de verde los que vienen de la base de datos
+      done[idx] = true;
+      checks[idx].classList.add('checked'); 
+    });
+    // Actualizamos las barras de porcentaje
+    updateProgress();
+  }
+}
+// Asignar eventos de clic a los botones Meet/YouTube de la lista principal
+document.addEventListener('DOMContentLoaded', async () => {
+  
+  // 1. Asignamos los clics a los botones de Meet y YT
+  document.querySelectorAll('.lesson-card').forEach((card, idx) => {
+    const meetBtn = card.querySelector('.btn-meet');
+    const ytBtn = card.querySelector('.btn-yt:not(.soon)'); 
+    if (meetBtn) meetBtn.addEventListener('click', () => marcarLeccionComoAprobada(idx, true));
+    if (ytBtn) ytBtn.addEventListener('click', () => marcarLeccionComoAprobada(idx, true));
+  });
+
+  // 2. Revisamos si el navegador recuerda la sesión del usuario (Supabase Auth hace esto solo)
+  const { data: { session } } = await _supabase.auth.getSession();
+  
+  if (session) {
+    usuarioActualId = session.user.id;
+    
+    // Obtenemos el nombre del usuario para cambiar el botón de Inscribirme
+    const { data: perfil } = await _supabase
+      .from('inscripciones')
+      .select('nombre')
+      .eq('id', usuarioActualId)
+      .single();
+      
+    if (perfil) {
+       const primerNombre = perfil.nombre.split(' ')[0]; 
+       const navItem = document.getElementById('nav-auth-item');
+       if (navItem) {
+         navItem.innerHTML = `<span style="color: white; font-weight: bold; padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 6px;">¡Hola, ${primerNombre}!</span>`;
+       }
+       
+    }
+
+    // Finalmente, cargamos todos sus checks verdes guardados
+    await cargarProgresoDesdeBD(usuarioActualId);
+    
+  }
+  const flotanteWa = document.querySelector('.wa-float');
+  if (flotanteWa) flotanteWa.style.setProperty('display', 'flex', 'important');
+});
+
+// --- 3. MODAL DE LECCIÓN MODIFICADO ---
 function openLesson(e,title,module,desc,objectives,duration,datetime,meetUrl,ytUrl,waUrl){
   e.stopPropagation();
+  
+  // Encontrar qué índice tiene la lección que acabamos de abrir
+  const card = e.target.closest('.lesson-card');
+  const allCards = Array.from(document.querySelectorAll('.lesson-card'));
+  const currentLessonIdx = allCards.indexOf(card);
+
   document.getElementById('detailTitle').textContent=title;
   document.getElementById('detailModule').textContent=module+' · '+duration;
   document.getElementById('detailDatetime').textContent='📅 '+datetime;
   document.getElementById('detailDesc').textContent=desc;
+  
   const ol=document.getElementById('detailObjectives');
   ol.innerHTML=objectives.map(o=>`<li>${o}</li>`).join('');
+  
   const ac=document.getElementById('detailActions');
   let html='';
   html+=`<a class="btn-detail-meet" href="${meetUrl}" target="_blank">📹 Agendar en Meet</a>`;
   if(ytUrl){
     html+=`<a class="btn-detail-yt" href="${ytUrl}" target="_blank">▶ Ver en YouTube</a>`;
   } else {
-    html+=`<button class="btn-detail-yt soon-btn" disabled>⏳ Aún falta subir la clase a YouTube porque aún no se ha dado</button>`;
+    html+=`<button class="btn-detail-yt soon-btn" disabled>⏳ Aún falta subir la clase a YouTube</button>`;
   }
   html+=`<button class="btn-detail-back" onclick="closeLesson()">← Volver</button>`;
   ac.innerHTML=html;
+  
+  // Asignar eventos de clic a los botones DEL MODAL
+  const detailMeet = ac.querySelector('.btn-detail-meet');
+  const detailYt = ac.querySelector('.btn-detail-yt:not(.soon-btn)');
+  if (detailMeet) detailMeet.addEventListener('click', () => marcarLeccionComoAprobada(currentLessonIdx));
+  if (detailYt) detailYt.addEventListener('click', () => marcarLeccionComoAprobada(currentLessonIdx));
+
   document.getElementById('detailOverlay').classList.add('show');
 }
 function closeLesson(){document.getElementById('detailOverlay').classList.remove('show')}
@@ -868,13 +1013,75 @@ function closeIfBg(e){if(e.target===document.getElementById('detailOverlay'))clo
 function openReg(e){e&&e.preventDefault();document.getElementById('regOverlay').classList.add('show')}
 function closeReg(){document.getElementById('regOverlay').classList.remove('show')}
 function closeRegIfBg(e){if(e.target===document.getElementById('regOverlay'))closeReg()}
-function submitReg(){
-  const n=document.getElementById('regNombre').value.trim();
-  const w=document.getElementById('regWa').value.trim();
-  const p=document.getElementById('regPass').value.trim();
-  if(!n||!w||!p){alert('Por favor completa todos los campos.');return;}
-  closeReg();
-  setTimeout(()=>alert('✅ ¡Inscripción exitosa, '+n+'! Recibirás información por WhatsApp al número '+w+'.'),200);
+
+// --- 4. INSCRIPCIÓN CONECTADA A SUPABASE ---
+async function submitReg(){
+  const n = document.getElementById('regNombre').value.trim();
+  const w = document.getElementById('regWa').value.trim();
+  const p = document.getElementById('regPass').value.trim();
+  
+  if(!n || !w || !p){
+    alert('Por favor completa todos los campos.');
+    return;
+  }
+
+  // Deshabilitar botón durante la carga
+  const btn = document.querySelector('.btn-reg');
+  const originalText = btn.innerHTML;
+  btn.innerHTML = '⏳ Inscribiendo...';
+  btn.disabled = true;
+
+  // 1. REGISTRO SEGURO CON SUPABASE AUTH
+  // Inventamos un correo usando el WhatsApp para cumplir el requisito de Supabase
+  const fakeEmail = `${w}@curso.com`;
+  
+  const { data: authData, error: authError } = await _supabase.auth.signUp({
+    email: fakeEmail,
+    password: p
+  });
+
+  if (authError) {
+    console.error("Error Auth:", authError);
+    btn.innerHTML = originalText;
+    btn.disabled = false;
+    
+    if(authError.message.includes('User already registered')) {
+      alert('Este número de WhatsApp ya está registrado.');
+    } else {
+      alert('Error al registrar la contraseña. Intenta con una de al menos 6 caracteres.');
+    }
+    return;
+  }
+
+  // 2. GUARDAR DATOS DEL PERFIL EN TU TABLA
+  // authData.user.id es el ID seguro que nos acaba de generar Supabase
+  const userId = authData.user.id;
+
+  const { data, error } = await _supabase
+    .from('inscripciones')
+    .insert([{ id: userId, nombre: n, whatsapp: w }])
+    .select();
+
+  btn.innerHTML = originalText;
+  btn.disabled = false;
+
+  if (error) {
+    console.error("Error Perfil:", error);
+    alert('Hubo un error al guardar tu perfil. Intenta de nuevo.');
+  } else {
+    usuarioActualId = userId;
+    
+    // --- CÓDIGO PARA REEMPLAZAR EL BOTÓN ---
+    const primerNombre = n.split(' ')[0]; // Toma solo el primer nombre
+    const navItem = document.getElementById('nav-auth-item');
+    if (navItem) {
+      navItem.innerHTML = `<span style="color: white; font-weight: bold; padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 6px;">¡Hola, ${primerNombre}!</span>`;
+    }
+    // ---------------------------------------
+
+    closeReg();
+    setTimeout(()=>alert('✅ ¡Inscripción exitosa, '+n+'!'), 200);
+  }
 }
 </script>
 </body>
