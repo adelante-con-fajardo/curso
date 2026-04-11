@@ -66,20 +66,6 @@ nav{background:var(--color-secondary);position:sticky;top:0;z-index:100;display:
 .stat-divider{width:1px;background:rgba(255,255,255,0.15);height:40px;align-self:center}
 .hero-cert-note{display:inline-flex;align-items:center;gap:8px;background:rgba(241,172,34,0.12);border:1px solid rgba(241,172,34,0.25);border-radius:10px;padding:10px 16px;font-size:13px;color:rgba(255,255,255,0.8)}
 .hero-cert-note strong{color:var(--color-orange-3)}
-.hero-cert-btn{background:var(--color-primary);color:var(--color-secondary);border:none;padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;margin-left:8px;transition:background 0.2s}
-.hero-cert-btn:hover{background:var(--color-orange-3)}
-
-/* CANDIDATE CARD - right column */
-.hero-right{display:flex;flex-direction:column;align-items:center;gap:0;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:22px 20px;text-align:center;min-width:220px;max-width:240px}
-.cand-photo{width:88px;height:88px;border-radius:50%;margin:0 auto 12px;border:3px solid var(--color-primary);background:linear-gradient(135deg,var(--color-blue-2),var(--color-secondary));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--color-primary)}
-.cand-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:white;margin-bottom:3px}
-.cand-role{font-size:11px;color:var(--color-orange-3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px}
-.cand-divider{width:100%;height:1px;background:rgba(255,255,255,0.1);margin-bottom:12px}
-.cand-fact{display:flex;align-items:flex-start;gap:7px;font-size:11.5px;color:rgba(255,255,255,0.7);margin-bottom:7px;text-align:left}
-.cand-fact-icon{font-size:13px;flex-shrink:0;margin-top:1px}
-.cand-badge{display:inline-block;background:rgba(241,172,34,0.2);border:1px solid rgba(241,172,34,0.3);color:var(--color-orange-3);font-size:11px;font-weight:600;padding:3px 10px;border-radius:6px;margin-top:10px}
-.cand-web{display:block;color:var(--color-orange-3);font-size:11px;text-decoration:none;margin-top:8px}
-.cand-web:hover{text-decoration:underline}
 
 /* PROGRESS BAR TOP */
 .progress-bar{background:rgba(0,30,70,0.92);padding:12px 2rem;display:flex;align-items:center;justify-content:center;gap:0;border-bottom:2px solid rgba(241,172,34,0.2);overflow-x:auto}
@@ -104,24 +90,9 @@ nav{background:var(--color-secondary);position:sticky;top:0;z-index:100;display:
 .wa-float-label{position:absolute;right:62px;background:#25d366;color:white;font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;white-space:nowrap;opacity:0;transition:opacity 0.2s;pointer-events:none;font-family:'DM Sans',sans-serif}
 .wa-float:hover .wa-float-label{opacity:1}
 
-/* MOBILE CANDIDATE STRIP */
-.hero-cand-mobile{display:none;margin-top:20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:14px 16px;gap:14px;align-items:center}
-.hcm-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--color-blue-2),var(--color-secondary));border:2px solid var(--color-primary);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:900;color:var(--color-primary);flex-shrink:0}
-.hcm-info{flex:1;min-width:0}
-.hcm-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:white;margin-bottom:4px}
-.hcm-facts{display:flex;flex-direction:column;gap:2px;font-size:11px;color:rgba(255,255,255,0.65)}
-.hcm-web{display:inline-block;margin-top:5px;font-size:11px;color:var(--color-orange-3);text-decoration:none}
-@media(max-width:800px){.hero-cand-mobile{display:flex}}
-
 /* MAIN */
 main{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
-.layout{display:grid;grid-template-columns:1fr 280px;gap:2rem;align-items:flex-start}
-@media(max-width:820px){.layout{grid-template-columns:1fr}.sidebar{order:-1}}
-@media (max-width: 820px) {
-  .nav-links {
-    display: flex !important;
-  }
-}
+.layout{display:grid;grid-template-columns:1fr;gap:2rem;align-items:flex-start}
 
 /* SECTION LABEL */
 .section-label{display:flex;align-items:center;gap:12px;margin-bottom:1rem;margin-top:2.5rem}
@@ -166,7 +137,7 @@ main{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
 .lesson-num{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-400)}
 .lesson-check{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--gray-300);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:transparent;transition:all 0.2s;cursor:pointer}
 .lesson-check.checked{background:#22c55e;border-color:#22c55e;color:white}
-.lesson-title{font-size:13px;font-weight:500;color:var(--gray-800);line-height:1.35}
+.lesson-title{font-size:13px;font-weight:500;color:var(--gray-800);line-height:1.35;cursor:pointer}
 .lesson-sub{font-size:11px;color:var(--gray-400);line-height:1.4}
 .lesson-date{font-size:11px;color:var(--color-blue-5);font-weight:500;display:flex;align-items:center;gap:4px;margin-top:2px}
 .lesson-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;padding-top:8px;border-top:1px solid var(--gray-200)}
@@ -178,6 +149,7 @@ main{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
 .btn-yt.soon:hover{background:#f9f9f9;color:var(--gray-400)}
 .btn-wa{background:#e8f9ef;color:#14532d;border:1px solid #6ee7b7;border-radius:7px;font-size:11px;font-weight:600;padding:5px 10px;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:4px;text-decoration:none;transition:all 0.2s}
 .btn-wa:hover{background:#14532d;color:white}
+
 /* DETAIL MODAL */
 .detail-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,30,70,0.6);align-items:center;justify-content:center;padding:20px}
 .detail-overlay.show{display:flex}
@@ -190,7 +162,6 @@ main{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
 .detail-datetime{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--color-blue-5);font-weight:500;margin-top:8px;background:var(--color-blue-0);padding:6px 12px;border-radius:8px;display:inline-flex}
 .detail-body{padding:1.4rem 2rem 1.8rem}
 .detail-st{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-400);margin:1.25rem 0 0.6rem}
-.detail-st:first-child{margin-top:0}
 .detail-text{font-size:14px;color:var(--gray-600);line-height:1.7}
 .detail-objectives{list-style:none;display:flex;flex-direction:column;gap:7px}
 .detail-objectives li{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--gray-700)}
@@ -200,10 +171,8 @@ main{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
 .btn-detail-meet:hover{background:#001f5c}
 .btn-detail-yt{flex:1;min-width:130px;background:var(--color-tertiary);color:white;border:none;padding:12px 18px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;transition:background 0.2s}
 .btn-detail-yt:hover{background:#8c1300}
-.btn-detail-yt.soon-btn{background:var(--gray-200);color:var(--gray-500,#6b7280);cursor:default}
-.btn-detail-yt.soon-btn:hover{background:var(--gray-200)}
+.btn-detail-yt.soon-btn{background:var(--gray-200);color:var(--gray-500);cursor:default}
 .btn-detail-back{background:var(--gray-100);color:var(--gray-700);border:none;padding:12px 18px;border-radius:10px;font-size:13px;font-weight:400;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s}
-.btn-detail-back:hover{background:var(--gray-200)}
 
 /* REGISTER MODAL */
 .reg-overlay{display:none;position:fixed;inset:0;z-index:400;background:rgba(0,30,70,0.65);align-items:center;justify-content:center;padding:20px}
@@ -211,160 +180,53 @@ main{padding:2.5rem 1.5rem;max-width:1100px;margin:0 auto}
 .reg-panel{background:white;border-radius:20px;width:100%;max-width:440px;padding:2rem}
 .reg-panel h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--color-secondary);margin-bottom:6px}
 .reg-panel p{font-size:13px;color:var(--gray-600);margin-bottom:1.5rem;line-height:1.5}
-.reg-panel p strong{color:var(--color-primary)}
 .form-group{margin-bottom:1rem}
 .form-group label{display:block;font-size:12px;font-weight:600;color:var(--gray-700);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:5px}
-.form-group input{width:100%;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:10px;padding:11px 14px;font-size:14px;color:var(--gray-800);font-family:'DM Sans',sans-serif;outline:none;transition:border 0.2s}
-.form-group input:focus{border-color:var(--color-blue-2)}
+.form-group input{width:100%;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:10px;padding:11px 14px;font-size:14px;color:var(--gray-800);font-family:'DM Sans',sans-serif;outline:none}
 .reg-actions{display:flex;gap:10px;margin-top:1.5rem}
-.btn-reg{flex:1;background:var(--color-primary);color:var(--color-secondary);border:none;padding:13px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s}
-.btn-reg:hover{background:var(--color-orange-3)}
-.btn-reg-cancel{background:var(--gray-100);color:var(--gray-600);border:none;padding:13px 18px;border-radius:10px;font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s}
-.btn-reg-cancel:hover{background:var(--gray-200)}
-
-/* SIDEBAR */
-.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:14px}
-.sidebar-card{background:white;border-radius:14px;padding:1.2rem 1.4rem;border:1px solid var(--gray-200)}
-.sidebar-card h3{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--gray-800);margin-bottom:0.9rem;padding-bottom:0.7rem;border-bottom:1px solid var(--gray-200)}
-.ps-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--gray-600);margin-bottom:5px}
-.ps-row strong{font-weight:500;color:var(--gray-800)}
-.ps-bar{height:6px;background:var(--gray-100);border-radius:3px;overflow:hidden;margin-bottom:12px}
-.ps-fill{height:100%;border-radius:3px;transition:width 1s ease}
-.cert-cta{background:linear-gradient(135deg,var(--color-secondary),#001f5c);border-radius:12px;padding:1.1rem;text-align:center;margin-top:4px}
-.cert-cta p{font-size:12px;color:rgba(255,255,255,0.75);margin-bottom:10px;line-height:1.5}
-.cert-cta strong{color:var(--color-orange-3)}
-.btn-cert{width:100%;background:var(--color-primary);color:var(--color-secondary);border:none;padding:10px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s}
-.btn-cert:hover{background:var(--color-orange-3)}
+.btn-reg{flex:1;background:var(--color-primary);color:var(--color-secondary);border:none;padding:13px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer}
+.btn-reg-cancel{background:var(--gray-100);color:var(--gray-600);border:none;padding:13px 18px;border-radius:10px;font-size:14px;cursor:pointer}
 
 /* FOOTER */
 footer{background:var(--color-secondary);color:rgba(255,255,255,0.5);text-align:center;padding:2rem 1.5rem;font-size:12px;margin-top:4rem}
 footer strong{color:var(--color-orange-3)}
 footer a{color:var(--color-orange-3);text-decoration:none}
-
-/* 🔥 Ajustes obligatorios para celulares: Footer y Botón Flotante */
 @media (max-width: 820px) {
-  .wa-float {
-    display: flex !important;
-    bottom: 90px !important; /* Lo sube para que no lo tape la barra del navegador */
-    right: 20px !important;
-    z-index: 9999 !important; /* Garantiza que siempre esté al frente */
-  }
-
-  footer {
-    display: block !important;
-    padding-bottom: 100px !important; /* Da espacio extra al final para poder hacer scroll completo */
-    position: relative;
-    z-index: 10;
-  }
+  .wa-float { display: flex !important; bottom: 90px !important; right: 20px !important; z-index: 9999 !important; }
+  footer { display: block !important; padding-bottom: 100px !important; position: relative; z-index: 10; }
+  .nav-links { display: flex !important; }
 }
+
+nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; box-sizing: border-box; width: 100%; }
+.nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #333; flex: 1; min-width: 0; }
+.nav-title { font-size: 14px; line-height: 1.2; white-space: normal; }
+.nav-title span { font-size: 12px; }
+.nav-links { display: flex; gap: 15px; list-style: none; padding: 0; margin: 0; flex-shrink: 0; }
+.nav-links li a { text-decoration: none; padding: 8px 12px; border-radius: 5px; font-weight: bold; white-space: nowrap; }
+.nav-cta { background-color: #0056b3; color: white; }
+@media (max-width: 600px) {
+  nav { padding: 10px; }
+  .nav-title { font-size: 11px; }
+  .nav-title span { font-size: 10px; }
+  .nav-links { gap: 8px; }
+  .nav-links li a { padding: 6px 8px; font-size: 12px; }
+}
+.nav-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.hero-sub strong { color: var(--color-orange-3); font-weight: 600; }
 </style>
 </head>
 <body>
 
-    <style>
-        /* --- 1. Contenedor Principal --- */
-nav {
-  display: flex;
-  justify-content: space-between; /* Separa el logo/título de los botones */
-  align-items: center;            /* Centra todo verticalmente */
-  padding: 10px 15px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-/* --- 2. Sección de Marca (Logo y Título) --- */
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #333;
-  flex: 1; /* Permite que tome el espacio disponible sin empujar los botones fuera */
-  min-width: 0; /* Evita que el texto largo desborde el contenedor flex */
-}
-
-.nav-title {
-  font-size: 14px;
-  line-height: 1.2;
-  white-space: normal; /* Permite que el texto baje a la siguiente línea si es necesario */
-}
-
-.nav-title span {
-  font-size: 12px;
-}
-
-/* --- 3. Sección de Botones --- */
-.nav-links {
-  display: flex;
-  gap: 15px; /* Espacio entre los botones */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-shrink: 0; /* EVITA que los botones se encojan y desaparezcan */
-}
-
-.nav-links li a {
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-weight: bold;
-  white-space: nowrap; /* Evita que el texto del botón se rompa en dos líneas */
-}
-
-.nav-cta {
-  background-color: #0056b3; /* Color de ejemplo para tu botón principal */
-  color: white;
-}
-
-/* --- 4. Adaptación para Celulares (Responsive) --- */
-@media (max-width: 600px) {
-  nav {
-    padding: 10px;
-  }
-  
-  /* Reducimos el tamaño del texto para que todo quepa */
-  .nav-title {
-    font-size: 11px; 
-  }
-  
-  .nav-title span {
-    font-size: 10px;
-  }
-
-  /* Reducimos el espacio entre botones y su tamaño interno */
-  .nav-links {
-    gap: 8px; 
-  }
-
-  .nav-links li a {
-    padding: 6px 8px;
-    font-size: 12px;
-  }
-}
-    </style>
-<!-- NAV -->
 <nav>
   <a class="nav-brand" href="#">
-    <div class="nav-logo">
-      <img src="logo.png" alt="Logo Sergio Fajardo">
-    </div>
+    <div class="nav-logo"><img src="logo.png" alt="Logo Sergio Fajardo"></div>
     <div class="nav-title">Curso Programa de Gobierno<br><span>Sergio Fajardo</span></div>
   </a>
   <ul class="nav-links">
     <li id="nav-auth-item"><a href="#" class="nav-cta" onclick="openReg(event)">Inscribirme</a></li>
   </ul>
 </nav>
-<style>
-  /* Ajuste para que la imagen del logo encaje perfecto */
-.nav-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Evita que la imagen se estire o deforme */
-  border-radius: 50%; /* Mantiene el diseño circular */
-}
-</style>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-unified">
     <div class="hero-header">
@@ -374,12 +236,6 @@ nav {
 <p class="hero-sub">
     Explora las propuestas de <strong>Sergio Fajardo</strong>: <strong>seguridad, salud, educación y dignidad social</strong>. Un programa <strong>serio y seguro</strong> basado en la <strong>transformación educativa y urbana</strong> que ya demostró en Antioquia y Medellín, un modelo <strong>reconocido internacionalmente</strong>.
 </p>
-<style>
-  .hero-sub strong {
-    color: var(--color-orange-3); /* Naranja característico de tu paleta */
-    font-weight: 600;
-}
-</style>
     <div class="hero-stats">
         <div class="stat"><div class="stat-num">4</div><div class="stat-label">Módulos</div></div>
         <div class="stat-divider"></div>
@@ -388,7 +244,6 @@ nav {
         <div class="stat"><div class="stat-num">3</div><div class="stat-label">Ejes</div></div>
         <div class="stat-divider"></div>
     </div>
-
     <div class="hero-footer">
         <div class="hero-cert-note">
             🎓 <span>Inscríbete para obtener el <strong>certificado del curso</strong></span>
@@ -397,399 +252,34 @@ nav {
 </div>
 </section>
 
-<!-- PROGRESS TOP - per module -->
 <div class="progress-bar">
   <div class="prog-modules">
     <div class="prog-module">
-      <div class="prog-module-top">
-        <span class="prog-module-name">Intro</span>
-        <span class="prog-module-pct" id="globalPct0">0%</span>
-      </div>
+      <div class="prog-module-top"><span class="prog-module-name">Intro</span><span class="prog-module-pct" id="globalPct0">0%</span></div>
       <div class="prog-track"><div class="prog-fill pf-intro" id="globalFill0"></div></div>
     </div>
     <div class="prog-module">
-      <div class="prog-module-top">
-        <span class="prog-module-name">M1</span>
-        <span class="prog-module-pct" id="globalPct1">0%</span>
-      </div>
+      <div class="prog-module-top"><span class="prog-module-name">M1</span><span class="prog-module-pct" id="globalPct1">0%</span></div>
       <div class="prog-track"><div class="prog-fill pf-crisis" id="globalFill1"></div></div>
     </div>
     <div class="prog-module">
-      <div class="prog-module-top">
-        <span class="prog-module-name">M2</span>
-        <span class="prog-module-pct" id="globalPct2">0%</span>
-      </div>
+      <div class="prog-module-top"><span class="prog-module-name">M2</span><span class="prog-module-pct" id="globalPct2">0%</span></div>
       <div class="prog-track"><div class="prog-fill pf-hope" id="globalFill2"></div></div>
     </div>
     <div class="prog-module">
-      <div class="prog-module-top">
-        <span class="prog-module-name">M3</span>
-        <span class="prog-module-pct" id="globalPct3">0%</span>
-      </div>
+      <div class="prog-module-top"><span class="prog-module-name">M3</span><span class="prog-module-pct" id="globalPct3">0%</span></div>
       <div class="prog-track"><div class="prog-fill pf-dignity" id="globalFill3"></div></div>
     </div>
   </div>
 </div>
 
-<!-- MAIN -->
 <main>
   <div class="layout">
-    <div class="modules-col">
-
-      <!-- INTRO -->
-      <div class="section-label"><span class="module-tag tag-intro">Introducción</span><div class="section-line"></div></div>
-      <div class="module-card open" id="mc0">
-        <div class="module-header" onclick="toggleModule(this.closest('.module-card'))">
-          <div class="module-icon icon-intro">🧭</div>
-          <div class="module-meta">
-            <div class="module-number">Módulo Introductorio</div>
-            <div class="module-name">Visión y Desafíos Nacionales</div>
-            <div class="module-desc">2 lecciones · Contexto y líneas de acción</div>
-          </div>
-          <div class="module-arrow">›</div>
-        </div>
-        <div class="module-bar bar-intro"><div class="prog-fill2"></div></div>
-        <div class="lessons-grid">
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">Lección 1</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Introducción y Contexto','Módulo Introductorio','La construcción de la Colombia que necesitamos. Análisis de los desafíos concretos: inseguridad, colapso del sistema de salud, corrupción, crisis energética e inestabilidad fiscal.',['Comprender el diagnóstico del país que presenta Fajardo','Identificar los 5 desafíos estructurales de Colombia en 2026','Entender la visión de no-extremos y gobierno de decencia'],'10 min','Mié 8 Abr 2026 · 8:00 - 9:00 PM','https://calendar.app.google/g3aYEjzBDCWWhgsL7',null,'https://calendar.app.google/g3aYEjzBDCWWhgsL7')">Introducción y Contexto</div>
-            <div class="lesson-sub">La Colombia que necesitamos · Diagnóstico nacional</div>
-            <div class="lesson-date">📅 Mié 8 Abr 2026 · 8:00 - 8:10 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/ojb-zpet-jyq" target="_blank">📹 Meet</a>
-              <a class="btn-yt soon" href="" target="_blank">▶ YouTube</a>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">Lección 2</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Líneas de Acción','Módulo Introductorio','Estructura del programa en tres grandes ejes: Crisis – Recuperación Segura; Esperanza – Colombia Adelante; y Dignidad – Compromiso Social en Serio.',['Conocer la arquitectura del programa de gobierno','Entender la lógica Crisis → Esperanza → Dignidad','Identificar las prioridades de gestión del candidato'],'10 min','Mié 8 Abr 2026 · 8:00 - 9:00 PM','https://calendar.app.google/ovzkNztfYw18FvdB7','','')">Líneas de Acción</div>
-            <div class="lesson-sub">Crisis · Esperanza · Dignidad</div>
-            <div class="lesson-date">📅 Mié 8 Abr 2026 · 8:10 - 8:20 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/ojb-zpet-jyq" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon" title="Aún no disponible">⏳ YouTube</span>
-              <a class="btn-wa" href="https://wa.me/593980407829" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- MÓDULO 1 -->
-      <div class="section-label"><span class="module-tag tag-crisis">Módulo 1</span><div class="section-line"></div></div>
-      <div class="module-card open" id="mc1">
-        <div class="module-header" onclick="toggleModule(this.closest('.module-card'))">
-          <div class="module-icon icon-crisis">🛡️</div>
-          <div class="module-meta">
-            <div class="module-number">Módulo 1 · 7 lecciones</div>
-            <div class="module-name">Crisis y Recuperación Segura</div>
-            <div class="module-desc">Seguridad, salud, finanzas, energía, justicia y política exterior</div>
-          </div>
-          <div class="module-arrow">›</div>
-        </div>
-        <div class="module-bar bar-crisis"><div class="prog-fill2"></div></div>
-        <div class="lessons-grid">
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">1.1</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Seguridad: Plan Guardián','Módulo 1 · Crisis y Recuperación Segura','Recuperar la autoridad democrática con firmeza y dentro de la ley. Fortalecimiento de la Fuerza Pública, inteligencia, coordinación institucional y control territorial.',['Entender el diagnóstico de seguridad en Colombia','Conocer el Plan Guardián y sus componentes','Analizar la estrategia de presencia estatal en territorios'],'20 min','Mié 8 Abr 2026 · 8:00 - 9:00 PM','https://calendar.app.google/ovzkNztfYw18FvdB7','','')">Seguridad: Plan Guardián</div>
-            <div class="lesson-sub">Control territorial · Fuerza Pública · Crimen organizado</div>
-            <div class="lesson-date">📅 Mié 8 Abr 2026 · 8:20 - 8:40 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/ojb-zpet-jyq" target="_blank">📹 Meet</a>
-              <a class="btn-yt" href="https://youtu.be/uDRb4R8BhqA" target="_blank">▶ YouTube</a>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">1.2</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Salud: Nuevo Orden del Sistema','Módulo 1 · Crisis y Recuperación Segura','Reorganizar el sistema de salud para garantizar acceso oportuno, calidad en la atención y sostenibilidad financiera. Pago de deudas, reglas claras y enfoque territorial.',['Comprender el colapso del sistema de salud','Conocer el plan de reorganización y deudas acumuladas','Entender el modelo de gestión del riesgo territorial'],'20 min','Mié 8 Abr 2026 · 8:00 - 9:00 PM','https://calendar.app.google/ovzkNztfYw18FvdB7','','')">Salud: Nuevo Orden del Sistema</div>
-            <div class="lesson-sub">Acceso oportuno · Sostenibilidad · Territorios</div>
-            <div class="lesson-date">📅 Mié 8 Abr 2026 · 8:40 - 9:00 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/ojb-zpet-jyq" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">1.3</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Finanzas Públicas y Regla Fiscal','Módulo 1 · Crisis y Recuperación Segura','Manejo responsable de los recursos públicos. Plan de ajuste fiscal, sostenibilidad de la deuda y reglas que protejan la estabilidad económica como base del desarrollo.',['Entender la situación fiscal actual de Colombia','Conocer la propuesta de regla fiscal responsable','Analizar el plan de ajuste y sus implicaciones'],'18 min','Lun 28 Abr 2026 · 6:00 PM','',null,'')">Finanzas Públicas y Regla Fiscal</div>
-            <div class="lesson-sub">Manejo responsable · Ajuste fiscal · Estabilidad</div>
-            <div class="lesson-date">📅 Jue 9 Abr 2026 · 8:00 - 8:20 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/zex-rpcc-wac" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">1.4</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Transición Energética Responsable','Módulo 1 · Crisis y Recuperación Segura','Transición energética gradual y sostenible: seguridad en el suministro, incorporación de renovables con reglas claras. Tarifas justas y cobertura regional.',['Diagnosticar la crisis del sistema energético colombiano','Comprender la hoja de ruta de transición energética','Evaluar el balance entre renovables y seguridad de suministro'],'20 min','Mié 30 Abr 2026 · 6:00 PM','',null,'')">Transición Energética Responsable</div>
-            <div class="lesson-sub">Renovables · Soberanía energética · Sin apagones</div>
-            <div class="lesson-date">📅 Jue 9 Abr 2026 · 8:20 - 8:40 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/zex-rpcc-wac" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">1.5</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Lucha Anticorrupción','Módulo 1 · Crisis y Recuperación Segura','Transparencia total, cero impunidad. Modelo preventivo: anticipación, detección y reacción coordinada. Protección de lo público como base moral del gobierno.',['Conocer el modelo anticorrupción preventivo','Entender las herramientas de control y transparencia','Identificar el papel de la ciudadanía en el control social'],'17 min','Lun 5 May 2026 · 6:00 PM','',null,'')">Lucha Anticorrupción</div>
-            <div class="lesson-sub">Transparencia total · Cero impunidad · Control social</div>
-            <div class="lesson-date">📅 Jue 9 Abr 2026 · 8:40 - 9:00 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/zex-rpcc-wac" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">1.6</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Justicia y Descongestión Judicial','Módulo 1 · Crisis y Recuperación Segura','Reforma del sistema judicial: modernización tecnológica, cercanía al ciudadano, eliminación de privilegios e impunidad. Justicia rápida, accesible y sin privilegios.',['Analizar los cuellos de botella del sistema judicial','Conocer la propuesta de modernización y tecnología','Comprender el enfoque de justicia cercana al ciudadano'],'18 min','Mié 7 May 2026 · 6:00 PM','',null,'')">Justicia y Descongestión Judicial</div>
-            <div class="lesson-sub">Reforma judicial · Tecnología · Sin privilegios</div>
-            <div class="lesson-date">📅 Sáb 11 Abr 2026 · 9:00 - 9:20 AM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/zge-qwik-nre" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">1.7</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Política Exterior','Módulo 1 · Crisis y Recuperación Segura','Diplomacia al servicio de los ciudadanos: liderazgo regional, relaciones bilaterales sólidas, diálogos de paz con condiciones claras y defensa de los colombianos en el exterior.',['Entender la visión de política exterior del candidato','Conocer la posición en diálogos de paz y multilateralismo','Analizar el rol de Colombia en la región'],'15 min','Lun 12 May 2026 · 6:00 PM','',null,'')">Política Exterior</div>
-            <div class="lesson-sub">Diplomacia · Liderazgo regional · Colombianos exterior</div>
-            <div class="lesson-date">📅 Sáb 11 Abr 2026 · 9:20 - 9:40 AM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/zge-qwik-nre" target="_blank">📹 Meet</a>
-              <a class="btn-yt" href="https://youtu.be/uDRb4R8BhqA?t=1380" target="_blank">▶ YouTube</a>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- MÓDULO 2 -->
-      <div class="section-label"><span class="module-tag tag-hope">Módulo 2</span><div class="section-line"></div></div>
-      <div class="module-card open" id="mc2">
-        <div class="module-header" onclick="toggleModule(this.closest('.module-card'))">
-          <div class="module-icon icon-hope">🌱</div>
-          <div class="module-meta">
-            <div class="module-number">Módulo 2 · 8 lecciones</div>
-            <div class="module-name">Esperanza y Colombia Adelante</div>
-            <div class="module-desc">Educación, ciencia, economía, agricultura, ambiente e infraestructura</div>
-          </div>
-          <div class="module-arrow">›</div>
-        </div>
-        <div class="module-bar bar-hope"><div class="prog-fill2"></div></div>
-        <div class="lessons-grid">
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">2.1</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Educación: Puerta de la Esperanza','Módulo 2 · Esperanza y Colombia Adelante','Trayectorias educativas completas: desde primera infancia hasta educación superior. Educación conectada con CTI como motor de transformación social.',['Conocer la propuesta de trayectorias educativas completas','Analizar la articulación educación-CTI','Entender el enfoque de niñez y juventud como prioridad'],'25 min','Mié 14 May 2026 · 6:00 PM','',null,'')">Educación: Puerta de la Esperanza</div>
-            <div class="lesson-sub">Primera infancia · Universidad · Calidad educativa</div>
-            <div class="lesson-date">📅 Sáb 11 Abr 2026 · 9:40 - 10:00 AM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="https://meet.google.com/zge-qwik-nre" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">2.2</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Ciencia, Tecnología e Innovación','Módulo 2 · Esperanza y Colombia Adelante','Simplificar e integrar el ecosistema de CTI en Colombia. Potenciar la investigación como motor de productividad y transformación social, articulado con el sector productivo.',['Entender el diagnóstico del ecosistema CTI colombiano','Conocer la propuesta de simplificación e integración','Analizar el vínculo entre investigación y sector productivo'],'20 min','Lun 19 May 2026 · 6:00 PM','',null,'')">Ciencia, Tecnología e Innovación</div>
-            <div class="lesson-sub">Investigación · Productividad · Transformación social</div>
-            <div class="lesson-date">📅 Dom 12 Abr 2026 · 9:00 - 9:20 AM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">2.3</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Emprendimiento y Crecimiento','Módulo 2 · Esperanza y Colombia Adelante','Colombia Crece: apoyo a la creación de empresas, generación de empleo formal y ecosistema amigable para emprendedores. Formalización y financiación accesible.',['Conocer las herramientas de apoyo al emprendimiento','Analizar la propuesta de formalización empresarial','Entender los mecanismos de financiación'],'18 min','Mié 21 May 2026 · 6:00 PM','',null,'')">Emprendimiento y Crecimiento</div>
-            <div class="lesson-sub">Colombia Crece · Empresas · Empleo formal</div>
-            <div class="lesson-date">📅 Dom 12 Abr 2026 · 9:20 - 9:40 AM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">2.4</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Desarrollo Productivo y Exportación','Módulo 2 · Esperanza y Colombia Adelante','Reconversión tecnológica del aparato productivo y vocación exportadora. Diversificación económica más allá de los hidrocarburos, con industrias de alto valor agregado.',['Analizar el modelo de diversificación económica','Conocer la estrategia exportadora de Fajardo','Entender la reconversión productiva con tecnología'],'20 min','Lun 26 May 2026 · 6:00 PM','',null,'')">Desarrollo Productivo y Exportación</div>
-            <div class="lesson-sub">Reconversión · Exportaciones · Valor agregado</div>
-            <div class="lesson-date">📅 Dom 12 Abr 2026 · 9:40 - 10:00 AM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">2.5</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Agricultura y Desarrollo Rural','Módulo 2 · Esperanza y Colombia Adelante','Sembrar progreso, cosechar riqueza. Apoyo al campo colombiano: reforma agraria productiva, tecnología para pequeños productores y mercados para la agricultura familiar.',['Conocer la propuesta de desarrollo rural productivo','Analizar el papel de la tecnología en el campo','Entender la articulación campo-ciudad'],'22 min','Mié 28 May 2026 · 6:00 PM','',null,'')">Agricultura y Desarrollo Rural</div>
-            <div class="lesson-sub">Campo · Pequeños productores · Soberanía alimentaria</div>
-            <div class="lesson-date">📅 Mar 14 Abr 2026 · 8:00 - 8:20 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">2.6</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Medio Ambiente y Bioeconomía','Módulo 2 · Esperanza y Colombia Adelante','Protección de la biodiversidad como activo estratégico. Soluciones climáticas concretas y bioeconomía como modelo de desarrollo compatible con la riqueza natural de Colombia.',['Entender la visión de Colombia como potencia ambiental','Conocer la propuesta de bioeconomía','Analizar los compromisos climáticos internacionales'],'20 min','Lun 2 Jun 2026 · 6:00 PM','',null,'')">Medio Ambiente y Bioeconomía</div>
-            <div class="lesson-sub">Biodiversidad · Clima · Desarrollo sostenible</div>
-            <div class="lesson-date">📅 Mar 14 Abr 2026 · 8:20 - 8:40 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">2.7</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Infraestructura y Movilidad','Módulo 2 · Esperanza y Colombia Adelante','Conectar regiones olvidadas: puertos, vías, aeropuertos y sistemas de transporte urbano. Rigor y transparencia en la ejecución de proyectos estratégicos.',['Conocer los proyectos prioritarios de infraestructura','Analizar la estrategia de conectividad regional','Entender el modelo de transparencia en la contratación'],'18 min','Mié 4 Jun 2026 · 6:00 PM','',null,'')">Infraestructura y Movilidad</div>
-            <div class="lesson-sub">Vías · Puertos · Conectividad regional</div>
-            <div class="lesson-date">📅 Mar 14 Abr 2026 · 8:40 - 9:00 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">2.8</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Turismo Sostenible','Módulo 2 · Esperanza y Colombia Adelante','Valorizar e integrar los destinos turísticos nacionales. Turismo como motor económico en regiones históricamente marginadas, con enfoque en sostenibilidad y comunidades locales.',['Conocer la estrategia de turismo sostenible','Analizar el potencial turístico de Colombia','Entender la participación de comunidades locales'],'15 min','Lun 9 Jun 2026 · 6:00 PM','',null,'')">Turismo Sostenible</div>
-            <div class="lesson-sub">Destinos nacionales · Comunidades · Economía regional</div>
-            <div class="lesson-date">📅 Mié 15 Abr 2026 · 8:00 - 8:20 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- MÓDULO 3 -->
-      <div class="section-label"><span class="module-tag tag-dignity">Módulo 3</span><div class="section-line"></div></div>
-      <div class="module-card open" id="mc3">
-        <div class="module-header" onclick="toggleModule(this.closest('.module-card'))">
-          <div class="module-icon icon-dignity">🤝</div>
-          <div class="module-meta">
-            <div class="module-number">Módulo 3 · 6 lecciones</div>
-            <div class="module-name">Dignidad y Compromiso Social</div>
-            <div class="module-desc">Inclusión, empleo, vivienda, cultura, deporte y diversidad</div>
-          </div>
-          <div class="module-arrow">›</div>
-        </div>
-        <div class="module-bar bar-dignity"><div class="prog-fill2"></div></div>
-        <div class="lessons-grid">
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">3.1</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Inclusión Social y Mínimo Digno','Módulo 3 · Dignidad y Compromiso Social','Sistema de protección social moderno: erradicación del hambre, subsidios focalizados y mínimo vital garantizado. El Estado como escudo para los más vulnerables.',['Conocer el concepto de mínimo digno en el programa','Analizar el sistema de protección social propuesto','Entender los mecanismos de erradicación del hambre'],'22 min','Mié 11 Jun 2026 · 6:00 PM','',null,'')">Inclusión Social y Mínimo Digno</div>
-            <div class="lesson-sub">Protección social · Hambre cero · Mínimo vital</div>
-            <div class="lesson-date">📅 Mié 15 Abr 2026 · 8:20 - 8:40 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">3.2</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Empleo Productivo y Trabajo Digno','Módulo 3 · Dignidad y Compromiso Social','Creación de oportunidades laborales sostenibles: empleo formal, derechos laborales, economía del cuidado y políticas para reducir la informalidad estructural.',['Analizar el diagnóstico del mercado laboral colombiano','Conocer las políticas de formalización del empleo','Entender la propuesta de economía del cuidado'],'20 min','Lun 16 Jun 2026 · 6:00 PM','',null,'')">Empleo Productivo y Trabajo Digno</div>
-            <div class="lesson-sub">Formalización · Derechos laborales · Economía del cuidado</div>
-            <div class="lesson-date">📅 Mié 15 Abr 2026 · 8:40 - 9:00 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">3.3</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Vivienda y Ciudades','Módulo 3 · Dignidad y Compromiso Social','Volver a soñar con una ciudad habitable: acceso a vivienda digna, desarrollo urbano planificado y ciudades que integran naturaleza, movilidad y convivencia.',['Conocer la propuesta de vivienda del programa','Analizar el modelo de desarrollo urbano sostenible','Entender la articulación vivienda-ciudad-región'],'20 min','Mié 18 Jun 2026 · 6:00 PM','',null,'')">Vivienda y Ciudades</div>
-            <div class="lesson-sub">Vivienda digna · Desarrollo urbano · Ciudad habitable</div>
-            <div class="lesson-date">📅 Jue 16 Abr 2026 · 8:00 - 8:20 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">3.4</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Cultura y Convivencia','Módulo 3 · Dignidad y Compromiso Social','De la cultura del enfrentamiento a la cultura de la convivencia. Industrias culturales, saberes tradicionales y el arte como herramienta de cohesión social.',['Conocer la visión cultural del candidato','Analizar el rol de las industrias culturales','Entender la cultura como herramienta de convivencia'],'18 min','Lun 23 Jun 2026 · 6:00 PM','',null,'')">Cultura y Convivencia</div>
-            <div class="lesson-sub">Industrias culturales · Saberes · Cohesión social</div>
-            <div class="lesson-date">📅 Jue 16 Abr 2026 · 8:20 - 8:40 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">3.5</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Deporte e Inclusión','Módulo 3 · Dignidad y Compromiso Social','Deporte como instrumento de inclusión y movilidad social: fomento masivo de la actividad física, alto rendimiento, infraestructura deportiva y deporte en territorios.',['Conocer la propuesta de masificación del deporte','Analizar el modelo de alto rendimiento deportivo','Entender el deporte como herramienta de inclusión'],'15 min','Mié 25 Jun 2026 · 6:00 PM','',null,'')">Deporte e Inclusión</div>
-            <div class="lesson-sub">Actividad física · Alto rendimiento · Territorios</div>
-            <div class="lesson-date">📅 Jue 16 Abr 2026 · 8:40 - 9:00 PM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-          <div class="lesson-card">
-            <div class="lesson-top"><span class="lesson-num">3.6</span><div class="lesson-check" onclick="toggleCheck(event,this)">✓</div></div>
-            <div class="lesson-title" onclick="openLesson(event,'Poblaciones y Riqueza Multicultural','Módulo 3 · Dignidad y Compromiso Social','Enfoque diferencial para mujeres, niñez, personas mayores, comunidades étnicas, población LGBTIQ+ y víctimas del conflicto. Colombia es más rica por su diversidad.',['Entender el enfoque diferencial en políticas públicas','Conocer las propuestas para cada grupo poblacional','Analizar la interseccionalidad en el programa de gobierno'],'25 min','Lun 30 Jun 2026 · 6:00 PM','',null,'')">Poblaciones y Riqueza Multicultural</div>
-            <div class="lesson-sub">Mujeres · Etnias · Víctimas · LGBTIQ+ · Diversidad</div>
-            <div class="lesson-date">📅 Sáb 18 Abr 2026 · 9:00 - 10:00 AM</div>
-            <div class="lesson-actions">
-              <a class="btn-meet" href="" target="_blank">📹 Meet</a>
-              <span class="btn-yt soon">⏳ YouTube</span>
-              <a class="btn-wa" href="" target="_blank">📁 Recursos</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div><!-- /modules-col -->
-
+    <div id="modules-container" class="modules-col">
+       </div>
   </div>
 </main>
 
-<!-- DETAIL MODAL -->
 <div class="detail-overlay" id="detailOverlay" onclick="closeIfBg(event)">
   <div class="detail-panel">
     <div class="detail-header">
@@ -808,7 +298,6 @@ nav {
   </div>
 </div>
 
-<!-- REGISTER MODAL -->
 <div class="reg-overlay" id="regOverlay" onclick="closeRegIfBg(event)">
   <div class="reg-panel">
     <h2>Inscripción al Curso</h2>
@@ -837,137 +326,295 @@ nav {
   <p style="margin-top:6px">Contenido de carácter informativo y pedagógico · <a href="https://www.sergiofajardo.com" target="_blank">sergiofajardo.com</a></p>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
 <a class="wa-float" href="https://wa.me/593980407829" target="_blank" title="Contáctanos por WhatsApp">
   <span class="wa-float-label">Contáctanos por WhatsApp</span>
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-// --- 1. CONFIGURACIÓN DE SUPABASE ---
-// Reemplaza estas variables con tus credenciales de Supabase (Project URL y API Key)
+// ==========================================================
+// 1. DATA DEL CURSO (AQUÍ SE EDITA TODO EL CONTENIDO)
+// ==========================================================
+const courseData = [
+  {
+    id: "mc0", tagClass: "tag-intro", tagText: "Introducción", iconClass: "icon-intro", icon: "🧭", barClass: "bar-intro",
+    number: "Módulo Introductorio", name: "Visión y Desafíos Nacionales", desc: "2 lecciones · Contexto y líneas de acción",
+    lessons: [
+      {
+        num: "Lección 1", title: "Introducción y Contexto", sub: "La Colombia que necesitamos · Diagnóstico nacional",
+        desc: "La construcción de la Colombia que necesitamos. Análisis de los desafíos concretos: inseguridad, colapso del sistema de salud, corrupción, crisis energética e inestabilidad fiscal.",
+        objectives: ["Comprender el diagnóstico del país que presenta Fajardo", "Identificar los 5 desafíos estructurales de Colombia en 2026", "Entender la visión de no-extremos y gobierno de decencia"],
+        duration: "10 min", cardDate: "📅 Mié 8 Abr 2026 · 8:00 - 8:10 PM", modalDate: "Mié 8 Abr 2026 · 8:00 - 9:00 PM",
+        meetCard: "https://meet.google.com/ojb-zpet-jyq", meetModal: "https://calendar.app.google/g3aYEjzBDCWWhgsL7", ytUrl: "https://www.youtube.com/watch?v=Wb9dkp1oFCM", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "Lección 2", title: "Líneas de Acción", sub: "Crisis · Esperanza · Dignidad",
+        desc: "Estructura del programa en tres grandes ejes: Crisis – Recuperación Segura; Esperanza – Colombia Adelante; y Dignidad – Compromiso Social en Serio.",
+        objectives: ["Conocer la arquitectura del programa de gobierno", "Entender la lógica Crisis → Esperanza → Dignidad", "Identificar las prioridades de gestión del candidato"],
+        duration: "10 min", cardDate: "📅 Mié 8 Abr 2026 · 8:10 - 8:20 PM", modalDate: "Mié 8 Abr 2026 · 8:00 - 9:00 PM",
+        meetCard: "https://meet.google.com/ojb-zpet-jyq", meetModal: "https://calendar.app.google/ovzkNztfYw18FvdB7", ytUrl: "https://www.youtube.com/watch?v=Wb9dkp1oFCM&t=2m32s", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      }
+    ]
+  },
+  {
+    id: "mc1", tagClass: "tag-crisis", tagText: "Módulo 1", iconClass: "icon-crisis", icon: "🛡️", barClass: "bar-crisis",
+    number: "Módulo 1 · 7 lecciones", name: "Crisis y Recuperación Segura", desc: "Seguridad, salud, finanzas, energía, justicia y política exterior",
+    lessons: [
+      {
+        num: "1.1", title: "Seguridad: Plan Guardián", sub: "Control territorial · Fuerza Pública · Crimen organizado",
+        desc: "Recuperar la autoridad democrática con firmeza y dentro de la ley. Fortalecimiento de la Fuerza Pública, inteligencia, coordinación institucional y control territorial.",
+        objectives: ["Entender el diagnóstico de seguridad en Colombia", "Conocer el Plan Guardián y sus componentes", "Analizar la estrategia de presencia estatal en territorios"],
+        duration: "20 min", cardDate: "📅 Mié 8 Abr 2026 · 8:20 - 8:40 PM", modalDate: "Mié 8 Abr 2026 · 8:00 - 9:00 PM",
+        meetCard: "https://meet.google.com/ojb-zpet-jyq", meetModal: "https://calendar.app.google/ovzkNztfYw18FvdB7", ytUrl: "https://www.youtube.com/watch?v=uDRb4R8BhqA", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "1.2", title: "Salud: Nuevo Orden del Sistema", sub: "Acceso oportuno · Sostenibilidad · Territorios",
+        desc: "Reorganizar el sistema de salud para garantizar acceso oportuno, calidad en la atención y sostenibilidad financiera. Pago de deudas, reglas claras y enfoque territorial.",
+        objectives: ["Comprender el colapso del sistema de salud", "Conocer el plan de reorganización y deudas acumuladas", "Entender el modelo de gestión del riesgo territorial"],
+        duration: "20 min", cardDate: "📅 Mié 8 Abr 2026 · 8:40 - 9:00 PM", modalDate: "Mié 8 Abr 2026 · 8:00 - 9:00 PM",
+        meetCard: "https://meet.google.com/zge-qwik-nre", meetModal: "https://calendar.app.google/EP4rbPwboJeYQCK26", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "1.3", title: "Finanzas Públicas y Regla Fiscal", sub: "Manejo responsable · Ajuste fiscal · Estabilidad",
+        desc: "Manejo responsable de los recursos públicos. Plan de ajuste fiscal, sostenibilidad de la deuda y reglas que protejan la estabilidad económica como base del desarrollo.",
+        objectives: ["Entender la situación fiscal actual de Colombia", "Conocer la propuesta de regla fiscal responsable", "Analizar el plan de ajuste y sus implicaciones"],
+        duration: "18 min", cardDate: "📅 Jue 9 Abr 2026 · 8:00 - 8:20 PM", modalDate: "Lun 28 Abr 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zex-rpcc-wac", meetModal: "", ytUrl: "https://www.youtube.com/watch?v=Sb18UU4c8_I", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "1.4", title: "Transición Energética Responsable", sub: "Renovables · Soberanía energética · Sin apagones",
+        desc: "Transición energética gradual y sostenible: seguridad en el suministro, incorporación de renovables con reglas claras. Tarifas justas y cobertura regional.",
+        objectives: ["Diagnosticar la crisis del sistema energético colombiano", "Comprender la hoja de ruta de transición energética", "Evaluar el balance entre renovables y seguridad de suministro"],
+        duration: "20 min", cardDate: "📅 Jue 9 Abr 2026 · 8:20 - 8:40 PM", modalDate: "Mié 30 Abr 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zex-rpcc-wac", meetModal: "", ytUrl: "https://www.youtube.com/watch?v=Sb18UU4c8_I&t=23m26s", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "1.5", title: "Lucha Anticorrupción", sub: "Transparencia total · Cero impunidad · Control social",
+        desc: "Transparencia total, cero impunidad. Modelo preventivo: anticipación, detección y reacción coordinada. Protección de lo público como base moral del gobierno.",
+        objectives: ["Conocer el modelo anticorrupción preventivo", "Entender las herramientas de control y transparencia", "Identificar el papel de la ciudadanía en el control social"],
+        duration: "17 min", cardDate: "📅 Jue 9 Abr 2026 · 8:40 - 9:00 PM", modalDate: "Lun 5 May 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zex-rpcc-wac", meetModal: "", ytUrl: "https://www.youtube.com/watch?v=Sb18UU4c8_I&t=60m", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "1.6", title: "Justicia y Descongestión Judicial", sub: "Reforma judicial · Tecnología · Sin privilegios",
+        desc: "Reforma del sistema judicial: modernización tecnológica, cercanía al ciudadano, eliminación de privilegios e impunidad. Justicia rápida, accesible y sin privilegios.",
+        objectives: ["Analizar los cuellos de botella del sistema judicial", "Conocer la propuesta de modernización y tecnología", "Comprender el enfoque de justicia cercana al ciudadano"],
+        duration: "18 min", cardDate: "📅 Sáb 11 Abr 2026 · 9:00 - 9:20 AM", modalDate: "Mié 7 May 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zge-qwik-nre", meetModal: "", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "1.7", title: "Política Exterior", sub: "Diplomacia · Liderazgo regional · Colombianos exterior",
+        desc: "Diplomacia al servicio de los ciudadanos: liderazgo regional, relaciones bilaterales sólidas, diálogos de paz con condiciones claras y defensa de los colombianos en el exterior.",
+        objectives: ["Entender la visión de política exterior del candidato", "Conocer la posición en diálogos de paz y multilateralismo", "Analizar el rol de Colombia en la región"],
+        duration: "15 min", cardDate: "📅 Sáb 11 Abr 2026 · 9:20 - 9:40 AM", modalDate: "Lun 12 May 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zge-qwik-nre", meetModal: "", ytUrl: "https://www.youtube.com/watch?v=uDRb4R8BhqA&t=25m12s", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      }
+    ]
+  },
+  {
+    id: "mc2", tagClass: "tag-hope", tagText: "Módulo 2", iconClass: "icon-hope", icon: "🌱", barClass: "bar-hope",
+    number: "Módulo 2 · 8 lecciones", name: "Esperanza y Colombia Adelante", desc: "Educación, ciencia, economía, agricultura, ambiente e infraestructura",
+    lessons: [
+      {
+        num: "2.1", title: "Educación: Puerta de la Esperanza", sub: "Primera infancia · Universidad · Calidad educativa",
+        desc: "Trayectorias educativas completas: desde primera infancia hasta educación superior. Educación conectada con CTI como motor de transformación social.",
+        objectives: ["Conocer la propuesta de trayectorias educativas completas", "Analizar la articulación educación-CTI", "Entender el enfoque de niñez y juventud como prioridad"],
+        duration: "25 min", cardDate: "📅 Sáb 11 Abr 2026 · 9:40 - 10:00 AM", modalDate: "Mié 14 May 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zge-qwik-nre", meetModal: "", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "2.2", title: "Ciencia, Tecnología e Innovación", sub: "Investigación · Productividad · Transformación social",
+        desc: "Simplificar e integrar el ecosistema de CTI en Colombia. Potenciar la investigación como motor de productividad y transformación social, articulado con el sector productivo.",
+        objectives: ["Entender el diagnóstico del ecosistema CTI colombiano", "Conocer la propuesta de simplificación e integración", "Analizar el vínculo entre investigación y sector productivo"],
+        duration: "20 min", cardDate: "📅 Dom 12 Abr 2026 · 9:00 - 9:20 AM", modalDate: "Lun 19 May 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/qnu-kubi-kff", meetModal: "https://calendar.app.google/pbfG2Fo9yXQjsF9t5", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "2.3", title: "Emprendimiento y Crecimiento", sub: "Colombia Crece · Empresas · Empleo formal",
+        desc: "Colombia Crece: apoyo a la creación de empresas, generación de empleo formal y ecosistema amigable para emprendedores. Formalización y financiación accesible.",
+        objectives: ["Conocer las herramientas de apoyo al emprendimiento", "Analizar la propuesta de formalización empresarial", "Entender los mecanismos de financiación"],
+        duration: "18 min", cardDate: "📅 Dom 12 Abr 2026 · 9:20 - 9:40 AM", modalDate: "Mié 21 May 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/qnu-kubi-kff", meetModal: "https://calendar.app.google/pbfG2Fo9yXQjsF9t5", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "2.4", title: "Desarrollo Productivo y Exportación", sub: "Reconversión · Exportaciones · Valor agregado",
+        desc: "Reconversión tecnológica del aparato productivo y vocación exportadora. Diversificación económica más allá de los hidrocarburos, con industrias de alto valor agregado.",
+        objectives: ["Analizar el modelo de diversificación económica", "Conocer la estrategia exportadora de Fajardo", "Entender la reconversión productiva con tecnología"],
+        duration: "20 min", cardDate: "📅 Dom 12 Abr 2026 · 9:40 - 10:00 AM", modalDate: "Lun 26 May 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/qnu-kubi-kff", meetModal: "https://calendar.app.google/pbfG2Fo9yXQjsF9t5", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "2.5", title: "Agricultura y Desarrollo Rural", sub: "Campo · Pequeños productores · Soberanía alimentaria",
+        desc: "Sembrar progreso, cosechar riqueza. Apoyo al campo colombiano: reforma agraria productiva, tecnología para pequeños productores y mercados para la agricultura familiar.",
+        objectives: ["Conocer la propuesta de desarrollo rural productivo", "Analizar el papel de la tecnología en el campo", "Entender la articulación campo-ciudad"],
+        duration: "22 min", cardDate: "📅 Mar 14 Abr 2026 · 8:00 - 8:20 PM", modalDate: "Mié 28 May 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zaf-ykwv-mxy", meetModal: "https://calendar.app.google/2vpyyRRmzmwCVhwc8", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "2.6", title: "Medio Ambiente y Bioeconomía", sub: "Biodiversidad · Clima · Desarrollo sostenible",
+        desc: "Protección de la biodiversidad como activo estratégico. Soluciones climáticas concretas y bioeconomía como modelo de desarrollo compatible con la riqueza natural de Colombia.",
+        objectives: ["Entender la visión de Colombia como potencia ambiental", "Conocer la propuesta de bioeconomía", "Analizar los compromisos climáticos internacionales"],
+        duration: "20 min", cardDate: "📅 Mar 14 Abr 2026 · 8:20 - 8:40 PM", modalDate: "Lun 2 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zaf-ykwv-mxy", meetModal: "https://calendar.app.google/2vpyyRRmzmwCVhwc8", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "2.7", title: "Infraestructura y Movilidad", sub: "Vías · Puertos · Conectividad regional",
+        desc: "Conectar regiones olvidadas: puertos, vías, aeropuertos y sistemas de transporte urbano. Rigor y transparencia en la ejecución de proyectos estratégicos.",
+        objectives: ["Conocer los proyectos prioritarios de infraestructura", "Analizar la estrategia de conectividad regional", "Entender el modelo de transparencia en la contratación"],
+        duration: "18 min", cardDate: "📅 Mar 14 Abr 2026 · 8:40 - 9:00 PM", modalDate: "Mié 4 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/zaf-ykwv-mxy", meetModal: "https://calendar.app.google/2vpyyRRmzmwCVhwc8", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "2.8", title: "Turismo Sostenible", sub: "Destinos nacionales · Comunidades · Economía regional",
+        desc: "Valorizar e integrar los destinos turísticos nacionales. Turismo como motor económico en regiones históricamente marginadas, con enfoque en sostenibilidad y comunidades locales.",
+        objectives: ["Conocer la estrategia de turismo sostenible", "Analizar el potencial turístico de Colombia", "Entender la participación de comunidades locales"],
+        duration: "15 min", cardDate: "📅 Mié 15 Abr 2026 · 8:00 - 8:20 PM", modalDate: "Lun 9 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/qtd-fmgv-ivu", meetModal: "https://calendar.app.google/wjmkC85tPyJ2QpNM7", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      }
+    ]
+  },
+  {
+    id: "mc3", tagClass: "tag-dignity", tagText: "Módulo 3", iconClass: "icon-dignity", icon: "🤝", barClass: "bar-dignity",
+    number: "Módulo 3 · 6 lecciones", name: "Dignidad y Compromiso Social", desc: "Inclusión, empleo, vivienda, cultura, deporte y diversidad",
+    lessons: [
+      {
+        num: "3.1", title: "Inclusión Social y Mínimo Digno", sub: "Protección social · Hambre cero · Mínimo vital",
+        desc: "Sistema de protección social moderno: erradicación del hambre, subsidios focalizados y mínimo vital garantizado. El Estado como escudo para los más vulnerables.",
+        objectives: ["Conocer el concepto de mínimo digno en el programa", "Analizar el sistema de protección social propuesto", "Entender los mecanismos de erradicación del hambre"],
+        duration: "22 min", cardDate: "📅 Mié 15 Abr 2026 · 8:20 - 8:40 PM", modalDate: "Mié 11 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/qtd-fmgv-ivu", meetModal: "https://calendar.app.google/wjmkC85tPyJ2QpNM7", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "3.2", title: "Empleo Productivo y Trabajo Digno", sub: "Formalización · Derechos laborales · Economía del cuidado",
+        desc: "Creación de oportunidades laborales sostenibles: empleo formal, derechos laborales, economía del cuidado y políticas para reducir la informalidad estructural.",
+        objectives: ["Analizar el diagnóstico del mercado laboral colombiano", "Conocer las políticas de formalización del empleo", "Entender la propuesta de economía del cuidado"],
+        duration: "20 min", cardDate: "📅 Mié 15 Abr 2026 · 8:40 - 9:00 PM", modalDate: "Lun 16 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/qtd-fmgv-ivu", meetModal: "https://calendar.app.google/wjmkC85tPyJ2QpNM7", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "3.3", title: "Vivienda y Ciudades", sub: "Vivienda digna · Desarrollo urbano · Ciudad habitable",
+        desc: "Volver a soñar con una ciudad habitable: acceso a vivienda digna, desarrollo urbano planificado y ciudades que integran naturaleza, movilidad y convivencia.",
+        objectives: ["Conocer la propuesta de vivienda del programa", "Analizar el modelo de desarrollo urbano sostenible", "Entender la articulación vivienda-ciudad-región"],
+        duration: "20 min", cardDate: "📅 Jue 16 Abr 2026 · 8:00 - 8:20 PM", modalDate: "Mié 18 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/ukw-ytjv-qxk", meetModal: "https://calendar.app.google/vAGcSVZWtLPgwyHZA", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "3.4", title: "Cultura y Convivencia", sub: "Industrias culturales · Saberes · Cohesión social",
+        desc: "De la cultura del enfrentamiento a la cultura de la convivencia. Industrias culturales, saberes tradicionales y el arte como herramienta de cohesión social.",
+        objectives: ["Conocer la visión cultural del candidato", "Analizar el rol de las industrias culturales", "Entender la cultura como herramienta de convivencia"],
+        duration: "18 min", cardDate: "📅 Jue 16 Abr 2026 · 8:20 - 8:40 PM", modalDate: "Lun 23 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/ukw-ytjv-qxk", meetModal: "https://calendar.app.google/vAGcSVZWtLPgwyHZA", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "3.5", title: "Deporte e Inclusión", sub: "Actividad física · Alto rendimiento · Territorios",
+        desc: "Deporte como instrumento de inclusión y movilidad social: fomento masivo de la actividad física, alto rendimiento, infraestructura deportiva y deporte en territorios.",
+        objectives: ["Conocer la propuesta de masificación del deporte", "Analizar el modelo de alto rendimiento deportivo", "Entender el deporte como herramienta de inclusión"],
+        duration: "15 min", cardDate: "📅 Jue 16 Abr 2026 · 8:40 - 9:00 PM", modalDate: "Mié 25 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/ukw-ytjv-qxk", meetModal: "https://calendar.app.google/vAGcSVZWtLPgwyHZA", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      },
+      {
+        num: "3.6", title: "Poblaciones y Riqueza Multicultural", sub: "Mujeres · Etnias · Víctimas · LGBTIQ+ · Diversidad",
+        desc: "Enfoque diferencial para mujeres, niñez, personas mayores, comunidades étnicas, población LGBTIQ+ y víctimas del conflicto. Colombia es más rica por su diversidad.",
+        objectives: ["Entender el enfoque diferencial en políticas públicas", "Conocer las propuestas para cada grupo poblacional", "Analizar la interseccionalidad en el programa de gobierno"],
+        duration: "25 min", cardDate: "📅 Sáb 18 Abr 2026 · 9:00 - 10:00 AM", modalDate: "Lun 30 Jun 2026 · 6:00 PM",
+        meetCard: "https://meet.google.com/hgp-rufo-dcp", meetModal: "https://calendar.app.google/krdDgHbtWJX6CspN7", ytUrl: "", resUrl: "https://drive.google.com/drive/folders/1T4N4SqjqyvVgB9fylCX5Jksx1I_YoqwW?usp=sharing"
+      }
+    ]
+  }
+];
+
+// ==========================================================
+// 2. CONFIGURACIÓN DE SUPABASE Y LÓGICA CORE
+// ==========================================================
 const SUPABASE_URL = 'https://ppvifhshcxthxgoiygtk.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwdmlmaHNoY3h0aHhnb2l5Z3RrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1MjcxNTksImV4cCI6MjA5MTEwMzE1OX0.WEhkYpTOvl2CXl_K8ydc4Z5YbFQHPH2c0T6ik1MOcBU';
 const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-let usuarioActualId = null; // Guardará el ID en la BD cuando el usuario se inscriba
+let usuarioActualId = null;
+let TOTALS = [];
+let checks = [];
+let done = [];
 
-// --- LÓGICA DE PROGRESO ORIGINAL ---
-const TOTALS=[2,7,8,6];
-let checks=Array.from(document.querySelectorAll('.lesson-check'));
-let done=new Array(checks.length).fill(false);
+// Función para renderizar todo el HTML basado en el Objeto JS
+function renderCourse() {
+  const container = document.getElementById('modules-container');
+  let html = '';
+  let globalIdx = 0;
 
-function toggleCheck(e, el){
-  e.stopPropagation();
-  const idx = checks.indexOf(el);
-  marcarLeccionComoAprobada(idx, !done[idx]); // Reutilizamos la nueva función
-}
+  courseData.forEach((mod, mIndex) => {
+    html += `
+      <div class="section-label"><span class="module-tag ${mod.tagClass}">${mod.tagText}</span><div class="section-line"></div></div>
+      <div class="module-card open" id="${mod.id}">
+        <div class="module-header" onclick="toggleModule(this.closest('.module-card'))">
+          <div class="module-icon ${mod.iconClass}">${mod.icon}</div>
+          <div class="module-meta">
+            <div class="module-number">${mod.number}</div>
+            <div class="module-name">${mod.name}</div>
+            <div class="module-desc">${mod.desc}</div>
+          </div>
+          <div class="module-arrow">›</div>
+        </div>
+        <div class="module-bar ${mod.barClass}"><div class="prog-fill2"></div></div>
+        <div class="lessons-grid">
+    `;
 
-function updateProgress(){
-  let cursor=0;
-  TOTALS.forEach((total,mi)=>{
-    const modDone=done.slice(cursor,cursor+total).filter(Boolean).length;
-    const pct=total>0?Math.round(modDone/total*100):0;
-    
-    const f2=document.querySelectorAll('.prog-fill2')[mi];
-    if(f2)f2.style.width=pct+'%';
-    
-    const gf=document.getElementById('globalFill'+mi);
-    const gp=document.getElementById('globalPct'+mi);
-    if(gf)gf.style.width=pct+'%';
-    if(gp)gp.textContent=pct+'%';
-    
-    const sf=document.getElementById('fill'+mi);
-    const sp=document.getElementById('pct'+mi);
-    if(sf)sf.style.width=pct+'%';
-    if(sp)sp.textContent=pct+'%';
-    cursor+=total;
-  });
-}
+    mod.lessons.forEach((lesson, lIndex) => {
+      html += `
+        <div class="lesson-card">
+          <div class="lesson-top">
+            <span class="lesson-num">${lesson.num}</span>
+            <div class="lesson-check" onclick="toggleCheck(event, ${globalIdx})">✓</div>
+          </div>
+          <div class="lesson-title" onclick="openLesson(event, ${mIndex}, ${lIndex}, ${globalIdx})">${lesson.title}</div>
+          <div class="lesson-sub">${lesson.sub}</div>
+          <div class="lesson-date">${lesson.cardDate}</div>
+          <div class="lesson-actions">
+      `;
+      // Meet Button
+      if(lesson.meetCard) {
+        html += `<a class="btn-meet" href="${lesson.meetCard}" target="_blank" onclick="marcarLeccionComoAprobada(${globalIdx}, true)">📹 Meet</a>`;
+      } else {
+        html += `<a class="btn-meet" href="#" target="_blank" style="pointer-events:none; opacity:0.6;">📹 Meet</a>`;
+      }
+      // YT Button
+      if(lesson.ytUrl) {
+        html += `<a class="btn-yt" href="${lesson.ytUrl}" target="_blank" onclick="marcarLeccionComoAprobada(${globalIdx}, true)">▶ YouTube</a>`;
+      } else {
+        html += `<span class="btn-yt soon" title="Aún no disponible">⏳ YouTube</span>`;
+      }
+      // Resources Button
+      if(lesson.resUrl) {
+        html += `<a class="btn-wa" href="${lesson.resUrl}" target="_blank">📁 Recursos</a>`;
+      } else {
+        html += `<a class="btn-wa" href="#" target="_blank" style="pointer-events:none; opacity:0.6;">📁 Recursos</a>`;
+      }
 
-function toggleModule(card){
-  card.classList.toggle('open');
-}
-
-// --- 2. NUEVA FUNCIÓN: APROBAR LECCIÓN Y ENVIAR A BD ---
-async function marcarLeccionComoAprobada(idx, forzarEstado = true) {
-  // Si el estado ya es igual al que queremos poner, no hacemos nada
-  if (done[idx] === forzarEstado) return; 
-
-  // 1. Cambiamos el estado visualmente en el HTML (pinta el check verde)
-  done[idx] = forzarEstado;
-  checks[idx].classList.toggle('checked', forzarEstado);
-  updateProgress();
-
-  // 2. Sincronizamos con Supabase
-  if (usuarioActualId) {
-    if (forzarEstado) {
-      // Si se completó, insertamos el registro
-      const { error } = await _supabase.from('progreso_lecciones').insert([{
-        inscripcion_id: usuarioActualId,
-        leccion_indice: idx
-      }]);
-      if(error) console.error("Error al guardar check:", error);
-    } else {
-      // Si el usuario desmarcó el círculo, lo borramos de la base de datos
-      const { error } = await _supabase.from('progreso_lecciones')
-        .delete()
-        .match({ inscripcion_id: usuarioActualId, leccion_indice: idx });
-      if(error) console.error("Error al borrar check:", error);
-    }
-  }
-}
-
-// --- NUEVA FUNCIÓN: Traer los checks verdes guardados ---
-async function cargarProgresoDesdeBD(userId) {
-  const { data, error } = await _supabase
-    .from('progreso_lecciones')
-    .select('leccion_indice')
-    .eq('inscripcion_id', userId);
-
-  if (data && data.length > 0) {
-    data.forEach(fila => {
-      const idx = fila.leccion_indice;
-      // Pintamos de verde los que vienen de la base de datos
-      done[idx] = true;
-      checks[idx].classList.add('checked'); 
+      html += `</div></div>`;
+      globalIdx++;
     });
-    // Actualizamos las barras de porcentaje
-    updateProgress();
-  }
-}
 
-// --- NUEVA FUNCIÓN: REGISTRAR CLICS EN SUPABASE ---
-async function registrarVisitaEnBD(userId) {
-  const { error } = await _supabase.from('registro_visitas').insert([{
-    inscripcion_id: userId || null // Manda el ID si ya inició sesión, o null si es alguien nuevo
-  }]);
-
-  if (error) console.error("Error al registrar la visita:", error);
-}
-// Asignar eventos de clic a los botones Meet/YouTube de la lista principal
-document.addEventListener('DOMContentLoaded', async () => {
-  
-  // 1. Asignamos los clics a los botones de Meet y YT
-  document.querySelectorAll('.lesson-card').forEach((card, idx) => {
-    const meetBtn = card.querySelector('.btn-meet');
-    const ytBtn = card.querySelector('.btn-yt:not(.soon)'); 
-    if (meetBtn) meetBtn.addEventListener('click', () => marcarLeccionComoAprobada(idx, true));
-    if (ytBtn) ytBtn.addEventListener('click', () => marcarLeccionComoAprobada(idx, true));
+    html += `</div></div>`;
   });
 
-  // 2. Revisamos si el navegador recuerda la sesión del usuario (Supabase Auth hace esto solo)
+  container.innerHTML = html;
+}
+
+// Inicialización
+document.addEventListener('DOMContentLoaded', async () => {
+  // Genera el DOM
+  renderCourse();
+  
+  // Variables globales de progreso
+  TOTALS = courseData.map(m => m.lessons.length);
+  checks = Array.from(document.querySelectorAll('.lesson-check'));
+  done = new Array(checks.length).fill(false);
+
+  // Sesión y Supabase
   const { data: { session } } = await _supabase.auth.getSession();
   
   if (session) {
     usuarioActualId = session.user.id;
-    
-    // Obtenemos el nombre del usuario para cambiar el botón de Inscribirme
-    const { data: perfil } = await _supabase
-      .from('inscripciones')
-      .select('nombre')
-      .eq('id', usuarioActualId)
-      .single();
+    const { data: perfil } = await _supabase.from('inscripciones').select('nombre').eq('id', usuarioActualId).single();
       
     if (perfil) {
        const primerNombre = perfil.nombre.split(' ')[0]; 
@@ -975,92 +622,140 @@ document.addEventListener('DOMContentLoaded', async () => {
        if (navItem) {
          navItem.innerHTML = `<span style="color: white; font-weight: bold; padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 6px;">¡Hola, ${primerNombre}!</span>`;
        }
-       
     }
-
-    // Finalmente, cargamos todos sus checks verdes guardados
     await cargarProgresoDesdeBD(usuarioActualId);
-    
   }
+  
   registrarVisitaEnBD(usuarioActualId);
   const flotanteWa = document.querySelector('.wa-float');
   if (flotanteWa) flotanteWa.style.setProperty('display', 'flex', 'important');
 });
 
-// --- 3. MODAL DE LECCIÓN MODIFICADO ---
-function openLesson(e,title,module,desc,objectives,duration,datetime,meetUrl,ytUrl,waUrl){
+// --- LÓGICA DE PROGRESO Y SUPABASE ---
+function toggleCheck(e, idx) {
   e.stopPropagation();
-  
-  // Encontrar qué índice tiene la lección que acabamos de abrir
-  const card = e.target.closest('.lesson-card');
-  const allCards = Array.from(document.querySelectorAll('.lesson-card'));
-  const currentLessonIdx = allCards.indexOf(card);
+  marcarLeccionComoAprobada(idx, !done[idx]);
+}
 
-  document.getElementById('detailTitle').textContent=title;
-  document.getElementById('detailModule').textContent=module+' · '+duration;
-  document.getElementById('detailDatetime').textContent='📅 '+datetime;
-  document.getElementById('detailDesc').textContent=desc;
-  
-  const ol=document.getElementById('detailObjectives');
-  ol.innerHTML=objectives.map(o=>`<li>${o}</li>`).join('');
-  
-  const ac=document.getElementById('detailActions');
-  let html='';
-  html+=`<a class="btn-detail-meet" href="${meetUrl}" target="_blank">📹 Agendar en Meet</a>`;
-  if(ytUrl){
-    html+=`<a class="btn-detail-yt" href="${ytUrl}" target="_blank">▶ Ver en YouTube</a>`;
-  } else {
-    html+=`<button class="btn-detail-yt soon-btn" disabled>⏳ Aún falta subir la clase a YouTube</button>`;
+function updateProgress() {
+  let cursor = 0;
+  TOTALS.forEach((total, mi) => {
+    const modDone = done.slice(cursor, cursor + total).filter(Boolean).length;
+    const pct = total > 0 ? Math.round(modDone / total * 100) : 0;
+    
+    const f2 = document.querySelectorAll('.prog-fill2')[mi];
+    if(f2) f2.style.width = pct + '%';
+    
+    const gf = document.getElementById('globalFill' + mi);
+    const gp = document.getElementById('globalPct' + mi);
+    if(gf) gf.style.width = pct + '%';
+    if(gp) gp.textContent = pct + '%';
+    
+    cursor += total;
+  });
+}
+
+function toggleModule(card) {
+  card.classList.toggle('open');
+}
+
+async function marcarLeccionComoAprobada(idx, forzarEstado = true) {
+  if (done[idx] === forzarEstado) return; 
+  done[idx] = forzarEstado;
+  checks[idx].classList.toggle('checked', forzarEstado);
+  updateProgress();
+
+  if (usuarioActualId) {
+    if (forzarEstado) {
+      const { error } = await _supabase.from('progreso_lecciones').insert([{ inscripcion_id: usuarioActualId, leccion_indice: idx }]);
+      if(error) console.error("Error al guardar check:", error);
+    } else {
+      const { error } = await _supabase.from('progreso_lecciones').delete().match({ inscripcion_id: usuarioActualId, leccion_indice: idx });
+      if(error) console.error("Error al borrar check:", error);
+    }
   }
-  html+=`<button class="btn-detail-back" onclick="closeLesson()">← Volver</button>`;
-  ac.innerHTML=html;
-  
-  // Asignar eventos de clic a los botones DEL MODAL
-  const detailMeet = ac.querySelector('.btn-detail-meet');
-  const detailYt = ac.querySelector('.btn-detail-yt:not(.soon-btn)');
-  if (detailMeet) detailMeet.addEventListener('click', () => marcarLeccionComoAprobada(currentLessonIdx));
-  if (detailYt) detailYt.addEventListener('click', () => marcarLeccionComoAprobada(currentLessonIdx));
+}
 
+async function cargarProgresoDesdeBD(userId) {
+  const { data, error } = await _supabase.from('progreso_lecciones').select('leccion_indice').eq('inscripcion_id', userId);
+  if (data && data.length > 0) {
+    data.forEach(fila => {
+      const idx = fila.leccion_indice;
+      done[idx] = true;
+      checks[idx].classList.add('checked'); 
+    });
+    updateProgress();
+  }
+}
+
+async function registrarVisitaEnBD(userId) {
+  const { error } = await _supabase.from('registro_visitas').insert([{ inscripcion_id: userId || null }]);
+  if (error) console.error("Error al registrar la visita:", error);
+}
+
+// --- MODALES Y ACCIONES ---
+function openLesson(e, mIndex, lIndex, globalIdx) {
+  e.stopPropagation();
+  const mod = courseData[mIndex];
+  const lesson = mod.lessons[lIndex];
+
+  document.getElementById('detailTitle').textContent = lesson.title;
+  document.getElementById('detailModule').textContent = mod.number + ' · ' + lesson.duration;
+  document.getElementById('detailDatetime').textContent = '📅 ' + lesson.modalDate;
+  document.getElementById('detailDesc').textContent = lesson.desc;
+  
+  const ol = document.getElementById('detailObjectives');
+  ol.innerHTML = lesson.objectives.map(o => `<li>${o}</li>`).join('');
+  
+  const ac = document.getElementById('detailActions');
+  let html = '';
+  
+  // Modal Meet Button
+  const meetHref = lesson.meetModal || lesson.meetCard; // Fallback al enlace original si no hay uno específico
+  if(meetHref) {
+    html += `<a class="btn-detail-meet" href="${meetHref}" target="_blank" onclick="marcarLeccionComoAprobada(${globalIdx}, true)">📹 Agendar en Meet</a>`;
+  }
+  
+  // Modal YT Button
+  if(lesson.ytUrl) {
+    html += `<a class="btn-detail-yt" href="${lesson.ytUrl}" target="_blank" onclick="marcarLeccionComoAprobada(${globalIdx}, true)">▶ Ver en YouTube</a>`;
+  } else {
+    html += `<button class="btn-detail-yt soon-btn" disabled>⏳ Aún falta subir la clase a YouTube</button>`;
+  }
+  html += `<button class="btn-detail-back" onclick="closeLesson()">← Volver</button>`;
+  
+  ac.innerHTML = html;
   document.getElementById('detailOverlay').classList.add('show');
 }
-function closeLesson(){document.getElementById('detailOverlay').classList.remove('show')}
-function closeIfBg(e){if(e.target===document.getElementById('detailOverlay'))closeLesson()}
 
-function openReg(e){e&&e.preventDefault();document.getElementById('regOverlay').classList.add('show')}
-function closeReg(){document.getElementById('regOverlay').classList.remove('show')}
-function closeRegIfBg(e){if(e.target===document.getElementById('regOverlay'))closeReg()}
+function closeLesson() { document.getElementById('detailOverlay').classList.remove('show') }
+function closeIfBg(e) { if(e.target === document.getElementById('detailOverlay')) closeLesson() }
 
-// --- 4. INSCRIPCIÓN CONECTADA A SUPABASE ---
-async function submitReg(){
+function openReg(e) { e && e.preventDefault(); document.getElementById('regOverlay').classList.add('show') }
+function closeReg() { document.getElementById('regOverlay').classList.remove('show') }
+function closeRegIfBg(e) { if(e.target === document.getElementById('regOverlay')) closeReg() }
+
+async function submitReg() {
   const n = document.getElementById('regNombre').value.trim();
   const w = document.getElementById('regWa').value.trim();
   const p = document.getElementById('regPass').value.trim();
   
-  if(!n || !w || !p){
+  if(!n || !w || !p) {
     alert('Por favor completa todos los campos.');
     return;
   }
 
-  // Deshabilitar botón durante la carga
   const btn = document.querySelector('.btn-reg');
   const originalText = btn.innerHTML;
   btn.innerHTML = '⏳ Inscribiendo...';
   btn.disabled = true;
 
-  // 1. REGISTRO SEGURO CON SUPABASE AUTH
-  // Inventamos un correo usando el WhatsApp para cumplir el requisito de Supabase
   const fakeEmail = `${w}@curso.com`;
-  
-  const { data: authData, error: authError } = await _supabase.auth.signUp({
-    email: fakeEmail,
-    password: p
-  });
+  const { data: authData, error: authError } = await _supabase.auth.signUp({ email: fakeEmail, password: p });
 
   if (authError) {
-    console.error("Error Auth:", authError);
     btn.innerHTML = originalText;
     btn.disabled = false;
-    
     if(authError.message.includes('User already registered')) {
       alert('Este número de WhatsApp ya está registrado.');
     } else {
@@ -1069,34 +764,23 @@ async function submitReg(){
     return;
   }
 
-  // 2. GUARDAR DATOS DEL PERFIL EN TU TABLA
-  // authData.user.id es el ID seguro que nos acaba de generar Supabase
   const userId = authData.user.id;
-
-  const { data, error } = await _supabase
-    .from('inscripciones')
-    .insert([{ id: userId, nombre: n, whatsapp: w }])
-    .select();
+  const { data, error } = await _supabase.from('inscripciones').insert([{ id: userId, nombre: n, whatsapp: w }]).select();
 
   btn.innerHTML = originalText;
   btn.disabled = false;
 
   if (error) {
-    console.error("Error Perfil:", error);
     alert('Hubo un error al guardar tu perfil. Intenta de nuevo.');
   } else {
     usuarioActualId = userId;
-    
-    // --- CÓDIGO PARA REEMPLAZAR EL BOTÓN ---
-    const primerNombre = n.split(' ')[0]; // Toma solo el primer nombre
+    const primerNombre = n.split(' ')[0]; 
     const navItem = document.getElementById('nav-auth-item');
     if (navItem) {
       navItem.innerHTML = `<span style="color: white; font-weight: bold; padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 6px;">¡Hola, ${primerNombre}!</span>`;
     }
-    // ---------------------------------------
-
     closeReg();
-    setTimeout(()=>alert('✅ ¡Inscripción exitosa, '+n+'!'), 200);
+    setTimeout(() => alert('✅ ¡Inscripción exitosa, ' + n + '!'), 200);
   }
 }
 </script>
